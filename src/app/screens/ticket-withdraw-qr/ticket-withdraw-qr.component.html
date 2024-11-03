@@ -1,0 +1,32 @@
+<app-header></app-header>
+
+<app-body>
+  <div id="ticket-withdraw-qr">
+    <div>
+      <div *ngIf="!codeHasBeenDetected">
+        <h1 class="PageTitle text-center animated fadeIn"> Escanea tu código QR acercandolo al lector para retirar tus
+          tickets</h1>
+        <div class="ticket-withdraw-qr-bg animated fadeIn"></div>
+      </div>
+      <div class="clearfix"></div>
+      <div *ngIf="codeHasBeenDetected" class="DetectionMessage">
+        <p class="text-center animated fadeIn">Se ha detectado un código, estamos buscando tus tickets.
+        </p>
+        <p class="text-center animated fadeIn">Por favor aguarda...</p>
+      </div>
+      <div class="footerAction animated slideInUp">
+        <div class="row">
+          <div class="col left">
+            <a class="btn btn-default btn-icon-cancel" routerLink="/clean-cache"><i></i>Cancelar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div></div>
+  </div>
+</app-body>
+
+<app-popup #errorPopup>
+  {{errorPopupMessage ? errorPopupMessage : "Ha ocurrido un error al consultar sus tickets, reintente o solicite ayuda
+  al personal."}}
+</app-popup>

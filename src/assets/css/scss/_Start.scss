@@ -1,0 +1,45 @@
+@import "variables";
+
+/*--*/
+
+.StartScreen {
+  .TheaterNameTitle {
+    h1 {
+      width: 100%;
+      margin: auto;
+      font-weight: bold;
+      font-size: 5vw;
+      padding: 0;
+      top: 2vw;
+    }
+  }
+
+  .Logo {
+    text-align: center;
+
+    img {
+      height: 56vh;
+      width: auto;
+      opacity: 0.9;
+      position: relative;
+      top: 4vh;
+    }
+  }
+
+  .footerAction {
+    .col {
+      &.right {
+        width: 95vw;
+      }
+    }
+
+    h2 {
+      width: 100%;
+      margin: auto;
+      font-weight: bold;
+      font-size: 3vw;
+      padding: 0;
+      top: -2vw;
+    }
+  }
+}

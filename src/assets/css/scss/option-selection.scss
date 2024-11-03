@@ -1,0 +1,116 @@
+@import "variables";
+.option-selection {
+    display: block;
+    margin: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    padding: 5vw 5vw 0 5vw;
+    li {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 30vh;
+        background-color: rgba(0, 0, 0, 0.32);
+        float: none;
+        margin: 0 0 10vh 0;
+        border-radius: 25px;
+        a {
+            display: block;
+            width: 100%;
+            height: 30vh;
+            background-color: rgba(0, 0, 0, 0.32);
+            text-decoration: none !important;
+            color: $ColorLight;
+            padding: 5vh;
+            border-radius: 25px;
+            i {
+                display: block;
+                float: left;
+                width: 20%;
+                height: 20vh;
+                background-repeat: no-repeat;
+                background-size: contain;
+                margin-right: 30px;
+            }
+            div {
+                display: block;
+                float: left;
+                width: 60%;
+                height: 20vh;
+                h2 {
+                    color: $ColorLight;
+                    display: block;
+                    font-size: 4vw;
+                    font-weight: bold;
+                }
+                p {
+                    color: $ColorLight;
+                    font-size: 2.5vw;
+                }
+            }
+        }
+        &::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='54'%3E%3Cpath fill-rule='evenodd' fill='%23FFF' d='M27.545 25.923L2.56.45c-.589-.6-1.532-.6-2.12 0a1.542 1.542 0 0 0 0 2.161l23.919 24.387L.44 51.386a1.542 1.542 0 0 0 0 2.161c.289.294.676.453 1.054.453s.766-.148 1.055-.453l24.984-25.474a1.54 1.54 0 0 0 .012-2.15z'/%3E%3C/svg%3E");
+            content: "";
+            display: block;
+            position: absolute;
+            width: 16%;
+            height: 30vh;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 3vw;
+            right: 0;
+            top: 0;
+            z-index: -1;
+        }
+    }
+}
+
+.sell-option-3 {
+    height: 20vh !important;
+
+    margin: 0 0 8vh 0 !important;
+
+    a {
+        height: 20vh !important;
+        padding: 3vh !important;
+
+        display: flex !important;
+        align-items: center;
+
+        i {
+            height: 12vh !important;
+            width: 80% !important;
+            margin-right: 0px !important;
+        }
+
+        div {
+            height: unset !important;
+            h2 {
+                font-size: 3vw !important;
+            }
+            p {
+                font-size: 2vw !important;
+            }
+        }
+
+    }
+
+    &::before {
+       
+        height: 20vh !important;    
+       
+    }
+}
+
+
+.div-i{
+    width: 12% !important;
+    margin-right: 30px !important;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,44 @@
+<app-header></app-header>
+
+<app-body>
+  <div id="ticket-withdraw">
+    <form [formGroup]="ticketForm" (ngSubmit)="onSave()">
+      <h1 class="PageTitle text-center animated fadeIn"> Digite {{ 'client_document_type' | translate:'es' | async }} y código web para retirar tus tickets </h1>
+      <div class="fifty FormWrapper animated fadeIn">
+        <div class="form-control">
+          <label>{{ 'client_document_type' | translate:'es' | async }}</label>
+          <input type="text" placeholder="Escriba aquí" (focus)="onFocus('ci')" formControlName="ci" required />
+        </div>
+        <div class="form-control">
+          <label>CÓDIGO</label>
+          <input type="text" placeholder="Escriba aquí" (focus)="onFocus('code')" formControlName="code" required />
+        </div>
+      </div>
+      <div class="fifty KeyNumbersWrapper animated fadeIn">
+        <div class="KeyNumbers">
+          <a (click)="add(7)"> <div class="Key7">7</div> </a> <a (click)="add(8)"> <div class="Key8">8</div> </a>
+          <a (click)="add(9)"> <div class="Key9">9</div> </a> <a (click)="add(4)"> <div class="Key4">4</div> </a>
+          <a (click)="add(5)"> <div class="Key5">5</div> </a> <a (click)="add(6)"> <div class="Key6">6</div> </a>
+          <a (click)="add(1)"> <div class="Key1">1</div> </a> <a (click)="add(2)"> <div class="Key2">2</div> </a>
+          <a (click)="add(3)"> <div class="Key3">3</div> </a> <a (click)="add(0)"> <div class="Key0">0</div> </a>
+          <a (click)="del()"> <div class="KeyDel">Borrar</div> </a>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+      <div class="footerAction animated slideInUp">
+        <div class="row">
+          <div class="col left">
+            <a class="btn btn-default btn-icon-cancel" routerLink="/clean-cache"><i></i>Cancelar</a>
+          </div>
+          <div class="col right">
+            <button type="submit" [disabled]="!ticketForm.valid || isSubmitting" class="btn btn-primary btn-icon-next">
+              <i></i>Siguiente
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</app-body>
+
+<app-alert #alert></app-alert>

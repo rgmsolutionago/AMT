@@ -1,0 +1,63 @@
+@import "variables";
+
+/*--*/
+
+.OrderList {
+    text-align: left;
+    font-size: 1.3vw;
+    .OrderListHeader {
+        line-height: 3vh;
+        h4 {
+            display: block;
+            color: $ColorDark;
+            text-transform: none;
+            font-weight: 100;
+            @include FontFamBold;
+        }
+        h2 {
+            display: block;
+            color: $Color1;
+            @include FontFamBold;
+        }
+        h3 {
+            display: block;
+        }
+    }
+    hr {
+        display: block;
+    }
+    ul.TicketItems {
+        height: 37vh;
+        border-width: 2px 0 2px 0;
+        border-color: $Color1;
+        border-style: solid;
+        position: relative;
+        padding: 2vh 0;
+        overflow-y: auto;
+        overflow-x: hidden;
+        line-height: 2.5em;
+        vertical-align: top;
+        margin: 1vh 0;
+        li {
+            display: flex;
+            position: relative;
+            float: left;
+            width: 100%;
+            font-size: 1.3vw;
+        }
+    }
+    ul.TicketTotals {
+        height: 6vh;
+        position: relative;
+        padding: 0;
+        line-height: 2.5em;
+        vertical-align: top;
+        li {
+            display: flex;
+            position: relative;
+            float: left;
+            width: 100%;
+            font-size: 1.3vw;
+        }
+    }
+}

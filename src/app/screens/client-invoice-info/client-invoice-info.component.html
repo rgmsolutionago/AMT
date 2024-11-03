@@ -1,0 +1,43 @@
+<app-header>
+  <app-nav-bar activePage="client-invoice-info"></app-nav-bar>
+</app-header>
+
+<app-body>
+  <div id="ClientInvoiceInfo">
+    <h1 class="PageTitle animated fadeIn">Ingrese sus datos de facturación</h1>
+    <div class="row ClientInvoiceInfoContent animated fadeIn">
+      <div class="animated fadeIn">
+        <div class="FieldContainer">
+          <label>{{ 'client_invoice_document_type' | translate:'es' | async }}</label>
+          <div>
+            <input type="text" placeholder="Escriba aquí" (focus)="focusInput('inputClientDocument')" 
+            required [(ngModel)]="clientDocument" #inputClientDocument readonly />
+            <!-- <button class="btn btn-keyboard" (click)="focusInput('inputClientDocument')"><i></i></button> -->
+          </div>
+        </div>
+        <div class="FieldContainer">
+          <label>{{ 'client_invoice_name' | translate:'es' | async }}</label>
+          <div>
+            <input type="text" placeholder="Escriba aquí" (focus)="focusInput('inputClientName')" 
+            required [(ngModel)]="clientName" #inputClientName readonly />
+            <!-- <button class="btn btn-keyboard" (click)="focusInput('inputClientName')"><i></i></button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footerAction animated slideInUp">
+      <div class="row">
+        <div class="col left">
+          <button class="btn btn-default btn-icon-back" (click)="back()"><i></i>Atrás</button>
+          <a class="btn btn-default btn-icon-cancel" routerLink="/clean-cache"><i></i>Cancelar</a>
+        </div>
+        <div class="col right">
+          <a class="btn btn-primary btn-icon-next" (click)="next()"><i></i>Siguiente</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</app-body>
+
+<app-on-screen-keyboard (keyPressed)="onKeyPressed($event)" #onScreenKeyboard></app-on-screen-keyboard>

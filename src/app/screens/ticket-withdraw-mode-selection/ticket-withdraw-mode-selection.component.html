@@ -1,0 +1,19 @@
+<app-header></app-header>
+
+<app-body class="retira-mode-selection">
+  <div class="Home">
+    <a (click)="navigate('/')" title="Inicio"> <i class="HomeIcon animated slideInLeft"></i> <span>Inicio</span></a>
+  </div>
+  <ul class="options">
+    <li class="navRetireEntradas animated slideInLeft">
+      <a routerLink="/retiro" title="Retirar con código"> 
+        <i></i> <div> <h2>Retirar con Código</h2> <p>Retire sus tickets utilizando un código</p> </div>
+      </a>
+    </li>
+    <li  *ngIf="isQRWithdrawalEnabled()"  class="navRetireEntradasQR animated slideInLeft">
+      <a routerLink="/retiro-qr" title="Retirar con QR">
+        <i></i> <div> <h2>Retirar con QR</h2> <p>Retire sus tickets utilizando un QR</p> </div>
+      </a>
+    </li>
+  </ul>
+</app-body>

@@ -1,0 +1,76 @@
+/*--*/
+.OrderList {
+  text-align: left;
+  font-size: 1.3vw;
+}
+
+.OrderList .OrderListHeader {
+  /* height: 10vh; */
+  line-height: 3vh;
+}
+
+.OrderList .OrderListHeader h4 {
+  display: block;
+  color: #020202;
+  text-transform: none;
+  font-weight: 100;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.OrderList .OrderListHeader h2 {
+  display: block;
+  color: #1280c0;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.OrderList .OrderListHeader h3 {
+  display: block;
+}
+
+.OrderList hr {
+  display: block;
+}
+
+.OrderList ul.TicketItems {
+  height: 37vh;
+  border-width: 2px 0 2px 0;
+  border-color: #1280c0;
+  border-style: solid;
+  position: relative;
+  padding: 2vh 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  line-height: 2.5em;
+  vertical-align: top;
+  margin: 1vh 0;
+}
+
+.OrderList ul.TicketItems li {
+  display: flex;
+  position: relative;
+  float: left;
+  width: 100%;
+  font-size: 1.3vw;
+}
+
+.OrderList ul.TicketTotals {
+  height: 6vh;
+  position: relative;
+  padding: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  line-height: 2.5em;
+  vertical-align: top;
+}
+
+.OrderList ul.TicketTotals li {
+  display: flex;
+  position: relative;
+  float: left;
+  width: 100%;
+  font-size: 1.3vw;
+}

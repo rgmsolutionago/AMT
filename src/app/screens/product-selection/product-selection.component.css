@@ -1,0 +1,35 @@
+.head-screen
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 65%;
+}
+
+.more-info {
+    z-index: 999;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: black;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 4px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    
+}
+
+.more-info:hover{
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.more-info > span {
+    color: #ebc835;
+    font-weight: 600;
+    font-size: 16px;
+}

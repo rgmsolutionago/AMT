@@ -1,0 +1,73 @@
+<app-header>
+  <app-nav-bar activePage="funciones"></app-nav-bar>
+</app-header>
+
+<app-body>
+  <div id="MovieFunction">
+    <h1 class="PageTitle animated fadeIn">Seleccione la cantidad de entradas para esta función</h1>
+    <div class="row MovieFunctionContent animated fadeIn">
+      <div class="col left">
+        <ul class="TicketFunction">
+          <li (click)="select(category)" *ngFor="let category of categories" class="active">
+            <div class="Promo">
+              <h3 class="Title">{{ category.Name }}</h3>
+              <h2 class="Price"><span>{{ 'theatre_currency' | translate:'es' | async }} </span>{{ category.Price }}</h2>
+            </div>
+            <div class="PromoQuantity">
+              <!-- <h3 class="Title">cantidad de entradas</h3> -->
+              <div class="Quantity">
+                <span (click)="less(category)" class="Less"></span>
+                <span class="QuantityNum">{{ category.quantity }}</span>
+                <span (click)="more(category)" class="More"></span>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="col right OrderTicket">
+        <div class="OrderList">
+          <div class="OrderListHeader">
+            <h4>Su orden</h4>
+            <h2>{{ order?.selectedFeature?.OriginalTitle }}</h2>
+            <h3>{{ order?.show?.parsedDate | titlecase }} - {{order?.show?.StartTime}} </h3>
+            <h3>{{ order?.show?.ScreenName}}</h3>
+          </div>
+          <ul class="TicketItems">
+            <li *ngFor="let category of order.categories">
+              <div class="col text-left">
+                <span>{{ category.quantity }} </span><span>{{ category.Name }}</span>
+              </div>
+              <div class="col text-right">
+                <span><b>{{ 'theatre_currency' | translate:'es' | async }}</b> {{ +category.Price * category.quantity }}</span>
+              </div>
+            </li>
+          </ul>
+          <ul class="TicketTotals">
+            <li>
+              <div class="col text-left"> <span>Total</span> </div>
+              <div class="col text-right">
+                <span><b>{{ 'theatre_currency' | translate:'es' | async }}</b> {{ order.total }}</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footerAction animated slideInUp">
+      <div class="row">
+        <div class="col left">
+          <a class="btn btn-default btn-icon-back" routerLink="/funciones"><i></i>Atrás</a>
+          <a class="btn btn-default btn-icon-cancel" routerLink="/clean-cache"><i></i>Cancelar</a>
+        </div>
+        <div class="col right">
+          <button [disabled]="!isOrderReady()" (click)="next()"
+            class="btn btn-primary btn-icon-next"><i></i>Siguiente</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-popup #errorPopup>
+    No hay categorías disponibles para esta función
+  </app-popup>
+</app-body>

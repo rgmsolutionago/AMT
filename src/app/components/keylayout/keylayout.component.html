@@ -1,0 +1,8 @@
+<div class="keyLayout-container" *ngIf="keyLayouts?.length && keyLayouts?.length > 1">
+  <div *ngFor="let keyLayout of keyLayouts">
+    <div class="keylayout-container active" [class.active]="keyLayout.Id == selectedKeyLayout || keyLayouts.length == 1 || (selectedKeyLayout==null && keyLayout.Id == keyLayouts[0].Id)" (click)="loadKeyLayout(keyLayout)">
+      <img [src]="keyLayout.Image" />
+    </div>
+  </div>
+</div>
+

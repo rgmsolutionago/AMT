@@ -1,0 +1,61 @@
+<app-header>
+  <app-nav-bar activePage="impresion"></app-nav-bar>
+</app-header>
+
+<app-body>
+  <div id="PrintTicket">
+    <div class="row PrintTicketContent animated fadeIn">
+      <div class="PrintTicketBg animated slideInDown">
+        <h1 class="PageTitle animated fadeIn">Retire sus tickets</h1>
+      </div>
+      <div class="col right">
+        <div class="OrderList">
+          <div class="OrderListHeader">
+            <h4>Su orden</h4>
+            <h2>{{ show?.originalTitle }}</h2>
+            <h3>{{ show?.premierDate | titlecase }} - {{show?.startTime}} </h3>
+            <h3>{{ show?.screenName}}</h3>
+          </div>
+          <ul class="TicketItems">
+            <li *ngFor="let category of movies">
+              <div class="col text-left">
+                <span>{{ category?.Quantity }} </span><span>{{ category?.TicketType.Name }}</span>
+              </div>
+              <div class="col text-right">
+                <span><b>{{ 'theatre_currency' | translate:'es' | async }}</b> {{ productPrice(category) }}</span>
+              </div>
+            </li>
+
+            <li *ngFor="let candy of candies">
+              <div class="col text-left">
+                <span>{{ candy?.Quantity }}</span> <span> {{ candy?.Product }}</span>
+              </div>
+              <div class="col text-right">
+                <span><b>{{ 'theatre_currency' | translate:'es' | async }}</b> {{ productPrice(candy) }}</span>
+              </div>
+            </li>
+          </ul>
+          <ul class="TicketTotals">
+            <li>
+              <div class="col text-left"> <span>Total</span> </div>
+              <div class="col text-right">
+                <span><b>{{ 'theatre_currency' | translate:'es' | async }}</b> {{ ticketsTotal }}</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footerAction animated slideInUp">
+      <div class="row">
+        <div class="col left">
+        </div>
+        <!-- <div class="col right">
+          <a class="btn btn-primary btn-icon-next" routerLink="/clean-cache"><i></i>Finalizar</a>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</app-body>
+
+<app-custom-error #errorPopup></app-custom-error>

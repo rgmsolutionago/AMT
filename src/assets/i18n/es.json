@@ -1,0 +1,18 @@
+{
+    "theatre_currency": "$", 
+    "client_document_type": "DNI",
+    "client_invoice_document_type": "RUC",
+    "client_invoice_name": "Nombre",
+
+    "product_selection_movie_title":"Comprar Entradas",
+    "product_selection_movie_description":"Vea la cartelera con los estrenos y todas las películas",
+    "product_selection_candy_title":"Comprar Candy",
+    "product_selection_candy_description":"Elige tu combo preferido",
+    "product_selection_pickup_title":"Retirar tus entradas",
+    "product_selection_pickup_description":"Consulte aquí sus reservas web y retire sus tickets",
+
+    "star_page_title":"Bienvenidos a",
+    "star_page_footer": "Toca la pantalla para escanear tu código de retiro o para comenzar tu compra",
+    "candy_page_title": "Candy Bar"
+}
+

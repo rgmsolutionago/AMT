@@ -1,0 +1,105 @@
+<app-header>
+  <app-nav-bar activePage="funciones"></app-nav-bar>
+</app-header>
+
+<app-body>
+  <div class="MovieDetail">
+    <div class="row MovieHeaderTitle">
+      <div class="col-9">
+        <!-- <h1 class="PageTitle animated fadeIn">Seleccione la fecha y la función para la película</h1> -->
+        <h2 class="MovieTitle animated slideInLeft">{{ selectedMovieTitle }}</h2>
+      </div>
+      <div class="col-3">
+        <div class="NextFuntion" *ngIf="nextShow">
+          <h4>Próxima función</h4>
+          <h5>{{ nextShow }}</h5>
+        </div>
+      </div>
+    </div>
+    <div class="row SelectFeatureArea">
+      <ul>
+        <li *ngFor="let movieFeature of movieFeatures" class="animated fadeInDown">
+          <a class="btn btn-Feature" (click)="selectFeature(movieFeature, true)"
+            [class.active]="isFeatureSelected(movieFeature)">
+            <p>{{ movieFeature?.TechnologyName }}</p>
+            <p>
+              <span>{{ movieFeature?.Language }}</span>
+              <span>{{ movieFeature?.SubTitled === "0" ? "" : "Sub" }}</span>
+            </p>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="row MovieContent animated fadeIn">
+      <div class="col left">
+        <div class="MovieInfo">
+          <div class="animated slideInUp">
+            <span>{{ selectedFeature?.TotalRuntime }} Min</span>
+            <span class="animated slideInLeft"> - {{ selectedFeature?.TechnologyName }}</span>
+            <span class="animated slideInLeft"> {{ selectedFeature?.Language + (selectedFeature?.SubTitled === "0" ? ""
+              : " Sub") }}</span>
+            <span class="animated slideInLeft"> - {{ selectedFeature?.Rating }}</span>
+          </div>
+          <!-- <div class="animated fadeIn">{{ selectedMovie?.ShortSynopsis }}</div> -->
+        </div>
+        <div class="PosterBackground"></div>
+        <figure [ngStyle]="{
+            'background-image': 'url(' + (selectedFeature?.poster | safe : 'resourceUrl') + ')'
+          }" class="animated zoomIn">
+          <div class="blur" [ngStyle]="{
+              'background-image': 'url(' + (selectedFeature?.poster | safe : 'resourceUrl') + ')'
+            }"></div>
+          <img [src]="(selectedFeature?.poster | safe : 'resourceUrl')" />
+        </figure>
+      </div>
+      <div class="col right">
+        <div class="row">
+          <div class="col SelectDateArea">
+            <ul class="DateArea">
+              <li *ngFor="let day of weekDays" class="animated slideInDown">
+                <a *ngIf="isSalesDate(day.isoDate)" class="btn btn-FuntionDate active"
+                  [class.active]="isActiveDay(day.isoDate)" (click)="changeDay(day.isoDate)">
+                  <span>Hoy</span>
+                </a>
+                <a *ngIf="!isSalesDate(day.isoDate)" class="btn btn-FuntionDate"
+                  [class.active]="isActiveDay(day.isoDate)" (click)="changeDay(day.isoDate)">
+                  <span class="DayAndMonth">{{ day.dayAndMonth }}</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col SelectFuntionDateArea">
+            <h5>{{ selectedDate }}</h5>
+            <ul class="FuntionDate">
+              <li *ngFor="let show of dayShows" class="animated fadeIn">
+                <img *ngIf="!showHasAvailableSeats(show)" src="/assets/img/evento_agotado.png" alt="Entradas Agotadas">
+                <a *ngIf="showHasAvailableSeats(show)" class="btn btn-FuntionDate" (click)="selectShow(show)" 
+                  [class.active]="isShowSelected(show)">
+                  <span>{{ show.StartTime }}</span>
+                </a>
+                <a *ngIf="!showHasAvailableSeats(show)" class="btn-FuntionDate-Disabled" [class.active]="isShowSelected(show)">
+                  <span>{{ show.StartTime }}</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="footerAction animated slideInUp">
+      <div class="row">
+        <div class="col left">
+          <a class="btn btn-default btn-icon-back" routerLink="/cartelera"><i></i>Atrás</a>
+          <a class="btn btn-default btn-icon-cancel" routerLink="/clean-cache"><i></i>Cancelar</a>
+        </div>
+        <div class="col right">
+          <button [disabled]="!isSelectionReady()" (click)="next()"
+            class="btn btn-primary btn-icon-next"><i></i>Siguiente</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</app-body>
+
+<app-custom-error #errorPopup></app-custom-error>

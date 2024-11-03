@@ -1,0 +1,65 @@
+<div id="VirtualKeyboard" *ngIf="open">
+  <div class="container">
+    <div class="line1-container">
+      <div>
+        <button class="btn btn-keyboard" (click)="onKeyPress('1')">1</button>
+        <button class="btn btn-keyboard" (click)="onKeyPress('2')">2</button>
+        <button class="btn btn-keyboard" (click)="onKeyPress('3')">3</button>
+        <button class="btn btn-keyboard" (click)="onKeyPress('4')">4</button>
+        <button class="btn btn-keyboard" (click)="onKeyPress('5')">5</button>
+        <button class="btn btn-keyboard" (click)="onKeyPress('6')">6</button>
+        <button class="btn btn-keyboard" (click)="onKeyPress('7')">7</button>
+        <button class="btn btn-keyboard" (click)="onKeyPress('8')">8</button>
+        <button class="btn btn-keyboard" (click)="onKeyPress('9')">9</button>
+        <button class="btn btn-keyboard" (click)="onKeyPress('0')">0</button>
+        <button class="btn btn-keyboard" (click)="onKeyPress('Delete')">BORRAR</button>
+      </div>
+    </div>
+
+    <div class="line2-container">
+      <div>
+        <button class="btn btn-keyboard" (click)="onKeyPress('q')">Q</button>
+        <button class="btn btn-keyboard" (click)="onKeyPress('w')">W</button>
+        <button class="btn btn-keyboard" (click)="onKeyPress('e')">E</button>
+        <button class="btn btn-keyboard" (click)="onKeyPress('r')">R</button>
+        <button class="btn btn-keyboard" (click)="onKeyPress('t')">T</button>
+        <button class="btn btn-keyboard" (click)="onKeyPress('y')">Y</button>
+        <button class="btn btn-keyboard" (click)="onKeyPress('u')">U</button>
+        <button class="btn btn-keyboard" (click)="onKeyPress('i')">I</button>
+        <button class="btn btn-keyboard" (click)="onKeyPress('o')">O</button>
+        <button class="btn btn-keyboard" (click)="onKeyPress('p')">P</button>
+      </div>
+    </div>
+
+    <div class="line3-container">
+      <div>
+        <button class="btn btn-keyboard" (click)="onKeyPress('a')">A</button>
+        <button class="btn btn-keyboard" (click)="onKeyPress('s')">S</button>
+        <button class="btn btn-keyboard" (click)="onKeyPress('d')">D</button>
+        <button class="btn btn-keyboard" (click)="onKeyPress('f')">F</button>
+        <button class="btn btn-keyboard" (click)="onKeyPress('g')">G</button>
+        <button class="btn btn-keyboard" (click)="onKeyPress('h')">H</button>
+        <button class="btn btn-keyboard" (click)="onKeyPress('j')">J</button>
+        <button class="btn btn-keyboard" (click)="onKeyPress('k')">K</button>
+        <button class="btn btn-keyboard" (click)="onKeyPress('l')">L</button>
+        <button class="btn btn-keyboard" (click)="onKeyPress('ñ')">Ñ</button>
+      </div>
+    </div>
+
+    <div class="line4-container">
+      <div>
+        <button class="btn btn-keyboard" (click)="onKeyPress('z')">Z</button>
+        <button class="btn btn-keyboard" (click)="onKeyPress('x')">X</button>
+        <button class="btn btn-keyboard" (click)="onKeyPress('c')">C</button>
+        <button class="btn btn-keyboard" (click)="onKeyPress('v')">V</button>
+        <button class="btn btn-keyboard" (click)="onKeyPress('b')">B</button>
+        <button class="btn btn-keyboard" (click)="onKeyPress('n')">N</button>
+        <button class="btn btn-keyboard" (click)="onKeyPress('m')">M</button>
+      </div>
+    </div>
+
+    <div class="space-container">
+      <button class="btn btn-keyboard space" (click)="onKeyPress(' ')">ESPACIO</button>
+    </div>
+  </div>
+</div>

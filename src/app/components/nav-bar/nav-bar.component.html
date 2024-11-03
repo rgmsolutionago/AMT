@@ -1,0 +1,65 @@
+<ul class="nav">
+  <li class="navCartelera" 
+    *ngIf="!onlyCandy"
+    [class.hidden]="activePage === 'impresion'" 
+    [class.disable]="isDisabled(20)" 
+    [class.active]="activePage === 'cartelera'">
+      <a title="Cartelera">
+      <i></i> <span>Cartelera</span>
+      <div class="progress"><span [style.width.%]="100"></span></div>
+    </a>
+  </li>
+
+  <li class="navFunciones" 
+  *ngIf="!onlyCandy"
+    [class.hidden]="activePage === 'impresion'"   
+    [class.disable]="isDisabled(30)" 
+    [class.active]="activePage === 'funciones'">
+    <a title="Elija función">
+      <i></i> <span>Elija función</span>
+      <div class="progress"><span [style.width.%]="100"></span></div>
+    </a>
+  </li>
+
+  <li class="navCandyBar" 
+  *ngIf="!onlyCandy && keyLayoutsExists"
+    [class.hidden]="activePage === 'impresion'"
+    [class.disable]="isDisabled(30)" 
+    [class.active]="activePage === 'productos'">
+      <a title="Candy Bar">
+      <i></i> <span>Candy Bar</span>
+      <div class="progress"><span [style.width.%]="100"></span></div>
+    </a>
+  </li>
+
+  <li class="navCandyBar" 
+  *ngIf="onlyCandy"
+    [class.hidden]="activePage === 'impresion'"
+    [class.disable]="isDisabled(30)" 
+    [class.active]="activePage === 'productos'">
+      <a title="Candy Bar">
+      <i></i> <span>Candy</span>
+      <div class="progress"><span [style.width.%]="100"></span></div>
+    </a>
+  </li>
+
+  <li class="navPago" 
+    [class.hidden]="activePage === 'impresion'"   
+    [class.disable]="isDisabled(40)" 
+    [class.active]="activePage === 'pago'">
+      <a title="Pago">
+      <i></i> <span>Pago</span>
+      <div class="progress"><span [style.width.%]="100"></span></div>
+    </a>
+  </li>
+
+  <li class="navRetireEntradas" 
+    [class.hidden]="activePage === 'impresion'" 
+    [class.disable]="isDisabled(50)"
+    [class.active]="activePage === 'impresion' || activePage === 'venta'">
+      <a title="Retire sus entradas">
+      <i></i> <span>Retire sus entradas</span>
+      <div class="progress"><span [style.width.%]="100"></span></div>
+    </a>
+  </li>
+</ul>

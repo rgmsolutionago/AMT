@@ -1,0 +1,38 @@
+
+
+.product-image {
+    border-radius: 10px;
+    box-shadow: rgb(0 0 0 / 80%) 0px 1px 4px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px !important;
+}
+
+.product-image > img {
+    width: 364px;
+    max-height: 400px;
+}
+
+.btn-close {
+     padding: 10px;
+     font-size: 16px;
+}
+
+
+.product-name {
+    border-bottom: 2px solid #ebc835 !important;
+    width: auto;
+}
+
+.modal {
+    margin-top: -300px !important;
+}
+
+.align-center {
+    display: flex;
+    justify-content: center;
+}
+
+.product-description {
+    margin-top: 24px;
+}

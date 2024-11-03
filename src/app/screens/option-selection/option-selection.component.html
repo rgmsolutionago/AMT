@@ -1,0 +1,51 @@
+<app-header></app-header>
+
+<app-body>
+  <div style="height: 100%;overflow-y: auto;">
+
+    <ul class="option-selection">
+
+      <li *ngIf="sellOption == 2 || sellOption == 3" class="navCartelera animated slideInLeft"
+        [class.sell-option-3]="sellOption==3">
+        <a routerLink="/cartelera" title="Comprar Entradas">
+          <div class="div-i" *ngIf="sellOption==3">
+            <i></i>
+          </div>
+          <i *ngIf="sellOption!=3"></i>
+          <div>
+            <h2>{{ 'product_selection_movie_title' | translate:'es' | async }}</h2>
+            <p>{{ 'product_selection_movie_description' | translate:'es' | async }}</p>
+          </div>
+        </a>
+      </li>
+
+      <li *ngIf="(sellOption==1 || sellOption == 3) && keyLayoutsExists" class="navCandy animated slideInLeft"
+        [class.sell-option-3]="sellOption==3">
+        <a routerLink="/productos/candy" title="Comprar Candy">
+          <div class="div-i" *ngIf="sellOption==3">
+            <i></i>
+          </div>
+          <i *ngIf="sellOption!=3"></i>
+          <div>
+            <h2>{{ 'product_selection_candy_title' | translate:'es' | async }}</h2>
+            <p>{{ 'product_selection_candy_description' | translate:'es' | async }}</p>
+          </div>
+        </a>
+      </li>
+
+      <li class="navRetireEntradas animated slideInLeft" [class.sell-option-3]="sellOption==3">
+        <a routerLink="/seleccion-retiro" title="Retirar tus entradas">
+          <div class="div-i" *ngIf="sellOption==3">
+            <i></i>
+          </div>
+          <i *ngIf="sellOption!=3"></i>
+          <div>
+            <h2>{{ 'product_selection_pickup_title' | translate:'es' | async }}</h2>
+            <p>{{ 'product_selection_pickup_description' | translate:'es' | async }}</p>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+</app-body>

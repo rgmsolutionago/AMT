@@ -1,0 +1,78 @@
+$FontSizeBase:1.1vw;
+$FontSizeLabelInput:2vw;
+$FontSizePageTitle:2.2vw;
+$BotonesFontSize:1.8vw;
+$BotonesPadding:2vw 3vw;
+$CarteleraFontSize1:0.9vw;
+$CarteleraFontSize2:0.8vw;
+$InputPadding:2vw 3vw;
+$ModalFontSize:1.17vw;
+$ColorLight:#EEF1F3;
+$ColorDark:#020202;
+$ColorDarkGray:#2b2b2b;
+$ColorGray:#9a9a9a;
+$ColorGrayLight:#63636345;
+$Color1:#1280c0;
+$Color2:#ebc835;
+$ColorOk:#04a446;
+$ColorDarkWithTransparency: rgb(0 0 0 / 80%);
+$ColorDarkWithTransparency60: rgb(0 0 0 / 60%);
+// font-family: 'Open Sans', sans-serif;
+// font-family: 'Open Sans Condensed', sans-serif;
+// font-family: 'Oswald', sans-serif;
+// Open+Sans+Condensed:300,700
+// Open+Sans:400,600,700
+@mixin FontFamLight {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@mixin FontFamCondensed {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+@mixin FontFamNormal {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+@mixin FontFamBold {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+@mixin FontFamBoldCondensed {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+::-webkit-scrollbar {
+    width: 3vw;
+}
+
+::-webkit-scrollbar-track {
+    background: $ColorLight;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $Color1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: $Color2;
+}
+
+body::-webkit-scrollbar {
+    width: 3vw;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: $ColorGrayLight;
+    outline: 1px solid $ColorGray;
+}

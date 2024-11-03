@@ -1,0 +1,225 @@
+@import "variables";
+
+#Pagos {
+  .PagosContent {
+    display: flex;
+
+    > .col {
+      background-color: $ColorLight;
+      padding: 1vw 1vw 0vw 1vw;
+      float: left;
+      position: fixed;
+      margin: 1vw 0vw;
+      height: 62vh;
+      width: 47vw;
+
+      &.left {
+        left: 2vw;
+        overflow: hidden;
+        overflow-y: hidden;
+        padding-bottom: 10px;
+        width: 59vw;
+        border-radius: 4px;
+      }
+
+      &.right {
+        left: 66vw;
+        width: 32vw;
+        color: $ColorDark;
+        height: 60vh;
+
+        &:after {
+          content: "";
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='738' height='83'%3E%3Cpath fill-rule='evenodd' fill='%23EEF1F3' d='M717 82h-5l-17-11c-2-1-4-2-5-1l-14 12h-4l-18-11c-1-1-3-2-4-1l-14 12h-4l-18-11c-1-1-2-2-4-1l-14 12h-4l-18-11c-1-1-3-2-5-1l-13 12h-5l-17-11c-1-1-3-2-5-1l-13 12h-5l-17-11-2-2-14 13h-5l-17-11c-2-1-4-2-5-1l-14 12h-4l-18-11c-1-1-3-2-4-1l-14 12h-4l-18-11c-1-1-2-2-4-1l-14 12h-4l-18-11c-1-1-3-2-5-1l-13 12h-5l-17-11c-1-1-3-2-5-1l-13 12h-5l-17-11-2-2-14 13h-5l-17-11c-2-1-4-2-5-1l-14 12h-4l-18-11c-1-1-3-2-4-1l-14 12h-4l-18-11c-1-1-2-2-4-1l-14 12h-4L96 71c-1-1-3-2-5-1L78 82h-5L56 71c-1-1-3-2-5-1L38 82h-5L16 71c-1-1-3-2-5-1L0 80V0h738v63l-21 19z'/%3E%3C/svg%3E");
+          display: block;
+          background-repeat: repeat-x !important;
+          background-position: left bottom;
+          height: 24px;
+          position: absolute;
+          right: 0vw;
+          width: 32vw;
+          bottom: -1vw;
+        }
+      }
+
+      // ul.Metodos {
+      //   margin: 0 -2vw 0 0;
+      //   padding: 0;
+
+      //   li {
+      //     margin: 0 1vw 2vh 0;
+      //     padding: 0;
+      //     display: block;
+      //     background: $ColorLight;
+      //     float: left;
+      //     overflow: hidden;
+      //     width: 44vw;
+      //     height: 8vw;
+
+      //     .MetodoPago {
+      //       background-color: $ColorLight;
+      //       border: 3px solid $Color1;
+      //       vertical-align: middle;
+      //       font-size: 3vh;
+      //       padding: 0;
+      //       width: 44vw;
+      //       height: 8vw;
+      //       position: relative;
+
+      //       img {
+      //         width: 44vw;
+      //         height: auto;
+      //         display: block;
+      //         position: relative;
+      //         z-index: 0;
+      //         top: -3px;
+      //         left: -3px;
+      //       }
+
+      //       .SimilRadio {
+      //         width: 2vw;
+      //         height: 2vw;
+      //         display: block;
+      //         position: absolute;
+      //         right: 3vw;
+      //         top: 3vw;
+      //         border-radius: 2vw;
+      //         background-color: white;
+      //         border: 5px solid #c9c9c9;
+      //         z-index: 1;
+      //       }
+      //     }
+
+      //     &.active {
+      //       background-color: $Color2;
+
+      //       .MetodoPago {
+      //         background-color: $Color1;
+      //         border: 3px solid $Color1;
+      //       }
+
+      //       .SimilRadio span {
+      //         width: 0.8vw;
+      //         height: 0.8vw;
+      //         display: block;
+      //         position: relative;
+      //         border-radius: 0.8vw;
+      //         margin: 0.27vw;
+      //         background-color: $Color1;
+      //       }
+      //     }
+
+      ul.PaymentMethods {
+        margin: 0 -2vw 0 0;
+        padding: 0;
+        list-style:none;
+        max-height:100%;
+        overflow-y:auto;
+        
+        
+        li {
+          margin: 0 1vw 1vh 0;
+          padding: 0;
+          display: block;
+          background: $ColorLight;
+          float: left;
+          overflow: hidden;
+          width: 53vw;
+          height: 5vw;
+
+          .PaymentMethod {
+            background-color: $ColorLight;
+            border: 2px solid $Color1;
+            vertical-align: middle;
+            font-size: 3vh;
+            padding: 0;
+            width: 53vw;
+            height: 5vw;
+            position: relative;
+            display: flex;
+            border-radius: 8px;
+            padding: 5px 10px;
+            align-items: center;
+
+            label {
+              margin-right: auto!important;
+              color: $Color1;
+              text-transform: none;
+              font-family: 'Open Sans', sans-serif;
+              font-weight: 700;
+              font-style: normal;
+              width: 100%;
+              height: 100%;
+              display: flex;
+              align-items: center;
+
+              img {
+                width: auto;
+                height: 100%;
+                display: block;
+                position: relative;
+                z-index: 0;
+                top: -3px;
+                left: -3px;
+                margin-left: 10px;
+                margin-right: 60px;
+              }
+            }
+            
+            input[type=radio] {
+              accent-color: $Color1;
+              border: 0px;
+              width: 20vw;
+              height: 2em;
+              margin-right: -60px;
+            }
+            
+            .SimilRadio {
+              width: 2vw;
+              height: 2vw;
+              display: block;
+              position: absolute;
+              right: 3vw;
+              top: 3vw;
+              border-radius: 2vw;
+              background-color: white;
+              border: 5px solid #c9c9c9;
+              z-index: 1;
+            }
+          }
+
+          &.active {
+            background-color: $Color2;
+
+            .MetodoPago {
+              background-color: $Color1;
+              border: 3px solid $Color1;
+            }
+
+            .SimilRadio span {
+              width: 0.8vw;
+              height: 0.8vw;
+              display: block;
+              position: relative;
+              border-radius: 0.8vw;
+              margin: 0.27vw;
+              background-color: $Color1;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.OrderTicket:after,
+.rightTicket {
+  content: "";
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='738' height='83'%3E%3Cpath fill-rule='evenodd' fill='%23FFF' d='M717 82h-5l-17-11c-2-1-4-2-5-1l-14 12h-4l-18-11c-1-1-3-2-4-1l-14 12h-4l-18-11c-1-1-2-2-4-1l-14 12h-4l-18-11c-1-1-3-2-5-1l-13 12h-5l-17-11c-1-1-3-2-5-1l-13 12h-5l-17-11-2-2-14 13h-5l-17-11c-2-1-4-2-5-1l-14 12h-4l-18-11c-1-1-3-2-4-1l-14 12h-4l-18-11c-1-1-2-2-4-1l-14 12h-4l-18-11c-1-1-3-2-5-1l-13 12h-5l-17-11c-1-1-3-2-5-1l-13 12h-5l-17-11-2-2-14 13h-5l-17-11c-2-1-4-2-5-1l-14 12h-4l-18-11c-1-1-3-2-4-1l-14 12h-4l-18-11c-1-1-2-2-4-1l-14 12h-4L96 71c-1-1-3-2-5-1L78 82h-5L56 71c-1-1-3-2-5-1L38 82h-5L16 71c-1-1-3-2-5-1L0 80V0h738v63l-21 19z'/%3E%3C/svg%3E");
+  display: block;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  height: 18px;
+  bottom: -20px;
+  position: fixed;
+}

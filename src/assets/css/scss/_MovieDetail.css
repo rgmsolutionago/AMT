@@ -1,0 +1,440 @@
+::-webkit-scrollbar {
+  width: 5vw;
+}
+
+::-webkit-scrollbar-track {
+  background: #EEF1F3;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1280c0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ebc835;
+}
+
+body::-webkit-scrollbar {
+  width: 5vw;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #dfdfdf;
+  outline: 1px solid #636363;
+}
+
+/*--*/
+.MovieDetail .MovieHeaderTitle {
+  color: #EEF1F3;
+  display: flex;
+  position: fixed;
+  top: 12vh;
+  left: 2vw;
+  right: 2vw;
+  width: 96vw;
+}
+
+.MovieDetail .MovieHeaderTitle .PageTitle {
+  color: #EEF1F3;
+  padding: 0.5vw 0 0 0;
+  white-space: nowrap;
+}
+
+.MovieDetail .MovieHeaderTitle .MovieTitle {
+  color: #EEF1F3;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 1.2;
+  padding: 0;
+  font-size: 3vw;
+  width: 76vw;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.MovieDetail .MovieHeaderTitle .MovieType {
+  color: #EEF1F3;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  padding: 0.5vw 0 0 0;
+  font-size: 2vw;
+}
+
+.MovieDetail .NextFuntion {
+  color: #EEF1F3;
+  background-color: #1280c0;
+  padding: 1vw;
+  width: auto;
+  display: inline-block;
+}
+
+.MovieDetail .NextFuntion h4 {
+  color: #EEF1F3;
+  font-size: 2vw;
+}
+
+.MovieDetail .NextFuntion h5 {
+  color: #EEF1F3;
+  font-size: 3vw;
+}
+
+.MovieDetail .MovieContent {
+  color: #EEF1F3;
+  display: flex;
+  position: fixed;
+  top: 29vh;
+  left: 2vw;
+  right: 2vw;
+  width: 96vw;
+  height: 53vh;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.MovieDetail .MovieContent .col.left {
+  width: 20.5vw;
+}
+
+.MovieDetail .MovieContent .col.left figure {
+  overflow: hidden;
+  display: block;
+  position: relative;
+  text-align: center;
+}
+
+.MovieDetail .MovieContent .col.left figure .blur {
+  filter: blur(10px);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+}
+
+.MovieDetail .MovieContent .col.left figure img {
+  height: auto;
+  width: 100%;
+  z-index: 2;
+  position: relative;
+}
+
+.MovieDetail .MovieContent .col.left .MovieTypes {
+  color: #EEF1F3;
+  display: none;
+}
+
+.MovieDetail .MovieContent .col.left .MovieTypes .MovieTypelink {
+  color: #EEF1F3;
+}
+
+.MovieDetail .MovieContent .col.right {
+  width: 79vw;
+}
+
+.MovieDetail .MovieContent .col.right .SelectFuntionDateArea {
+  color: #EEF1F3;
+  background-color: #EEF1F3;
+  display: flex;
+  position: fixed;
+  top: 29vh;
+  left: 23vw;
+  right: 2vw;
+  width: auto;
+  height: 40vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.MovieDetail .MovieContent .col.right .SelectFuntionDateArea h5 {
+  color: #1280c0;
+  position: absolute;
+  padding: 0.8vw 1vw;
+  font-size: 1.5vw;
+  font-weight: 600;
+}
+
+.MovieDetail .MovieContent .col.right .SelectFuntionDateArea .FuntionDate {
+  margin: 2.2vw -2vw 0 0;
+  padding: 1vw 0 0 1vw;
+}
+
+.MovieDetail .MovieContent .col.right .SelectFuntionDateArea .FuntionDate li {
+  background-color: #1280c0;
+  float: left;
+  margin: 0 1vw 1vw 0;
+  width: 18vw;
+}
+
+.MovieDetail .MovieContent .col.right .SelectFuntionDateArea .FuntionDate li .btn-FuntionDate {
+  color: #EEF1F3;
+  text-align: center;
+  width: 100%;
+  background-color: #636363;
+  padding: 2vh 3vw;
+}
+
+.MovieDetail .MovieContent .col.right .SelectFuntionDateArea .FuntionDate li .btn-FuntionDate.active {
+  color: #EEF1F3;
+  border: 0px solid #1280c0 !important;
+  background-color: #1280c0 !important;
+}
+
+.MovieDetail .MovieContent .col.right .SelectFuntionDateArea .FuntionDate li .btn-FuntionDate span {
+  color: #EEF1F3;
+  display: block;
+  font-size: 3vh;
+  line-height: 0.9;
+}
+
+.MovieDetail .MovieContent .col.right .SelectFuntionDateArea .FuntionDate li .btn-FuntionDate span + span {
+  font-size: 6vh;
+  line-height: 0.9;
+}
+
+.MovieDetail .MovieContent .col.right .SelectDateArea {
+  color: #EEF1F3;
+  background-color: #EEF1F3;
+  display: flex;
+  position: fixed;
+  top: 71vh;
+  left: 23vw;
+  right: 2vw;
+  width: auto;
+  height: 10vh;
+  text-align: left;
+}
+
+.MovieDetail .MovieContent .col.right .SelectDateArea .DateArea {
+  width: 100%;
+}
+
+.MovieDetail .MovieContent .col.right .SelectDateArea .DateArea li {
+  float: left;
+  width: 12.5%;
+  height: 10vh;
+}
+
+.MovieDetail .MovieContent .col.right .SelectDateArea .DateArea li .btn-FuntionDate {
+  width: 100%;
+  display: block;
+  position: relative;
+  text-align: center;
+  background-color: #EEF1F3;
+  cursor: pointer;
+  height: 10vh;
+}
+
+.MovieDetail .MovieContent .col.right .SelectDateArea .DateArea li .btn-FuntionDate span {
+  color: #1280c0;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 0.95em;
+  color: #1280c0;
+}
+
+.MovieDetail .MovieContent .col.right .SelectDateArea .DateArea li .btn-FuntionDate.active {
+  color: #1280c0;
+  background-color: #ebc835;
+}
+
+.MovieDetail .MovieContent .col.right .SelectDateArea .DateArea li .btn-FuntionDate.active span {
+  color: #1280c0;
+}
+
+.MovieDetail .MovieContent .col.right .SelectDateArea .DateArea li .btn-FuntionDate.active:before {
+  content: "";
+  position: absolute;
+  background-color: transparent;
+  z-index: 2;
+  top: -30px;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 15px 30px 15px;
+  border-color: transparent transparent #ebc835 transparent;
+  transform: translateX(-40%);
+}
+
+#MovieFunction .MovieFunctionContent {
+  display: flex;
+}
+
+#MovieFunction .MovieFunctionContent > .col {
+  background-color: #EEF1F3;
+  padding: 1vw 1vw 0vw 1vw;
+  float: left;
+  position: fixed;
+  margin: 1vw 0vw;
+  height: 61vh;
+  width: 62vw;
+}
+
+#MovieFunction .MovieFunctionContent > .col.left {
+  left: 2vw;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+#MovieFunction .MovieFunctionContent > .col.right {
+  color: #020202;
+  left: 66vw;
+  width: 32vw;
+  height: 60vh;
+}
+
+#MovieFunction .MovieFunctionContent > .col.right:after {
+  content: "";
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='738' height='83'%3E%3Cpath fill-rule='evenodd' fill='%23EEF1F3' d='M717 82h-5l-17-11c-2-1-4-2-5-1l-14 12h-4l-18-11c-1-1-3-2-4-1l-14 12h-4l-18-11c-1-1-2-2-4-1l-14 12h-4l-18-11c-1-1-3-2-5-1l-13 12h-5l-17-11c-1-1-3-2-5-1l-13 12h-5l-17-11-2-2-14 13h-5l-17-11c-2-1-4-2-5-1l-14 12h-4l-18-11c-1-1-3-2-4-1l-14 12h-4l-18-11c-1-1-2-2-4-1l-14 12h-4l-18-11c-1-1-3-2-5-1l-13 12h-5l-17-11c-1-1-3-2-5-1l-13 12h-5l-17-11-2-2-14 13h-5l-17-11c-2-1-4-2-5-1l-14 12h-4l-18-11c-1-1-3-2-4-1l-14 12h-4l-18-11c-1-1-2-2-4-1l-14 12h-4L96 71c-1-1-3-2-5-1L78 82h-5L56 71c-1-1-3-2-5-1L38 82h-5L16 71c-1-1-3-2-5-1L0 80V0h738v63l-21 19z'/%3E%3C/svg%3E");
+  display: block;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  height: 18px;
+  bottom: -20px;
+  position: fixed;
+  top: 79vh;
+  left: 66vw;
+  width: 32vw;
+}
+
+#MovieFunction .MovieFunctionContent > .col ul.TicketFunction {
+  margin: 0;
+  padding: 0;
+}
+
+#MovieFunction .MovieFunctionContent > .col ul.TicketFunction li {
+  margin: 0 0 2vh 0;
+  padding: 0;
+  display: flex;
+}
+
+#MovieFunction .MovieFunctionContent > .col ul.TicketFunction li .Promo {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #636363;
+  min-height: 12.2vh;
+  height: auto;
+  vertical-align: middle;
+  width: 40vw;
+  font-size: 3vh;
+  align-items: center;
+  padding: 2.9vh;
+}
+
+#MovieFunction .MovieFunctionContent > .col ul.TicketFunction li .Promo .Title {
+  display: block;
+  width: 100%;
+  color: #EEF1F3;
+}
+
+#MovieFunction .MovieFunctionContent > .col ul.TicketFunction li .Promo .Price {
+  display: block;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  width: 100%;
+  color: #EEF1F3;
+}
+
+#MovieFunction .MovieFunctionContent > .col ul.TicketFunction li .PromoQuantity {
+  display: none;
+  width: 19vw;
+  margin-left: 1vw;
+  height: 12.2vh;
+  vertical-align: middle;
+  font-size: 2vh;
+  padding: 0 2vw;
+  text-align: center;
+  color: #EEF1F3;
+}
+
+#MovieFunction .MovieFunctionContent > .col ul.TicketFunction li .PromoQuantity .Title {
+  display: block;
+  padding: 1vh 0;
+  line-height: 1;
+  color: #EEF1F3;
+  font-size: 2vh;
+}
+
+#MovieFunction .MovieFunctionContent > .col ul.TicketFunction li .PromoQuantity .Quantity {
+  display: inline-table;
+  line-height: 6vh;
+  text-align: center;
+  color: #EEF1F3;
+}
+
+#MovieFunction .MovieFunctionContent > .col ul.TicketFunction li .PromoQuantity .Quantity .Less {
+  display: inline-block;
+  cursor: pointer;
+  width: 3vw;
+  height: 7vh;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='34' height='34'%3E%3Cpath fill-rule='evenodd' fill='%23EBC835' d='M17 34a17 17 0 0 1 0-34 17 17 0 0 1 0 34zm0-32a15 15 0 0 0 0 30 15 15 0 0 0 0-30zm8 16H10l-1-1 1-1h15l1 1-1 1z'/%3E%3C/svg%3E");
+}
+
+#MovieFunction .MovieFunctionContent > .col ul.TicketFunction li .PromoQuantity .Quantity .More {
+  display: inline-block;
+  cursor: pointer;
+  width: 3vw;
+  height: 7vh;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='34' height='34'%3E%3Cpath fill-rule='evenodd' fill='%23EBC835' d='M17 34a17 17 0 0 1 0-34 17 17 0 0 1 0 34zm0-32a15 15 0 0 0 0 30 15 15 0 0 0 0-30zm8 16h-7v7l-1 1-1-1v-7h-6l-2-1 2-1h6V9l1-1 1 1v7h7l1 1-1 1z'/%3E%3C/svg%3E");
+}
+
+#MovieFunction .MovieFunctionContent > .col ul.TicketFunction li .PromoQuantity .Quantity .QuantityNum {
+  display: inline-block;
+  font-size: 3vw;
+  width: 6vw;
+  height: 7vh;
+  line-height: 7vh;
+  vertical-align: top;
+  color: #EEF1F3;
+}
+
+#MovieFunction .MovieFunctionContent > .col ul.TicketFunction li.active .Promo {
+  display: block;
+  background-color: #1280c0;
+}
+
+#MovieFunction .MovieFunctionContent > .col ul.TicketFunction li.active .PromoQuantity {
+  display: inline-block;
+  background-color: #1280c0;
+}
+
+#MovieFunction .MovieFunctionContent > .col .TicketTotals {
+  position: relative;
+  padding: 0;
+  line-height: 4vh;
+  vertical-align: top;
+}
+
+figure,
+figure img {
+  transition: all 0.5s ease-in-out;
+}
+
+figure.popup {
+  position: fixed !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  text-align: center !important;
+  top: 0vh !important;
+  z-index: 9999 !important;
+  background-color: rgba(0, 0, 0, 0.9) !important;
+  left: 0vh !important;
+}
+
+figure.popup img {
+  height: 96vh !important;
+  width: auto !important;
+  top: 2vh !important;
+}

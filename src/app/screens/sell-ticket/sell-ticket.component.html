@@ -1,0 +1,115 @@
+<app-header>
+  <app-nav-bar activePage="venta" [onlyCandy]="onlyCandy"></app-nav-bar>
+</app-header>
+
+<app-body>
+  <div id="SellTicket">
+    <div class="row SellTicketContent animated fadeIn">
+      <div class="left">
+        <h1 class="PageTitle animated slideInUp">Finaliza tu Compra</h1>
+        <p class="PageSubTitle animated slideInUp">Tienes <span
+            class="font-weight-bold">{{paymentTimeoutRemaining}}</span> minutos para completar el pago...</p>
+      </div>
+    </div>
+    <div class="row justify-content-between PaymentMethods animated fadeIn">
+      <!-- <div class="col right">
+        <div class="OrderList">
+          <div class="OrderListHeader">
+            <h4>Su orden</h4>
+            <h2>{{ order?.selectedFeature?.OriginalTitle }}</h2>
+            <h3>{{ order?.show?.parsedDate | titlecase }} - {{order?.show?.StartTime}} </h3>
+            <h3>{{ order?.show?.ScreenName}}</h3>
+          </div>
+          <ul class="TicketItems">
+            <li *ngFor="let category of order?.categories">
+              <div class="col text-left">
+                <span>{{ category?.quantity }} </span><span>{{ category?.Name }}</span>
+              </div>
+              <div class="col text-right">
+                <span><b>{{ 'theatre_currency' | translate:'es' | async }}</b> {{ category?.Price }}</span>
+              </div>
+            </li>
+
+            <li *ngFor="let product of order?.products">
+              <div class="col text-left">
+                <span>{{ product?.quantity }}</span> <span> {{ product?.NomProducto }}</span>
+              </div>
+              <div class="col text-right">
+                <span><b>{{ 'theatre_currency' | translate:'es' | async }}</b> {{ productPrice(product) }}</span>
+              </div>
+            </li>
+          </ul>
+          <ul class="TicketTotals">
+            <li>
+              <div class="col text-left"> <span>Total</span> </div>
+              <div class="col text-right">
+                <span><b>{{ 'theatre_currency' | translate:'es' | async }}</b> {{ order?.total }}</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div> -->
+
+
+      <div class="Contactless" *ngIf="showPaymentMethodContactless">
+        <h2>Tarjeta Sin Contacto</h2>
+        <div class="Images">
+          <!-- <img class="Card" src="/assets/img/payment-chip-credit-card.png" /> -->
+          <img class="Posnet" src="/assets/img/payment-contactless.png" />
+        </div>
+        <div>
+          <p>
+            • Apoya la tarjeta sobre la pantalla del Posnet
+          </p>
+          <p>
+            • Espera unos segundos
+          </p>
+          <p>
+            • Retira tu ticket
+          </p>
+        </div>
+      </div>
+
+      <div *ngIf="showPaymentMethodChip">
+        <h2>Tarjeta con Chip</h2>
+        <div class="Images">
+          <!-- <img class="Card" src="/assets/img/payment-chip-credit-card.png" /> -->
+          <img class="Posnet" src="/assets/img/payment-chip.png" />
+        </div>
+        <div>
+          <p>
+            • Inserta la tarjeta por la ranura en la parte inferior del Postnet
+          </p>
+          <p>
+            • Espera unos segundos
+          </p>
+          <p>
+            • Retira tu ticket y tu tarjeta
+          </p>
+        </div>
+      </div>
+
+      <div *ngIf="showPaymentMethodMagnetic">
+        <h2>Tarjeta con Banda Magnética</h2>
+        <div class="Images">
+          <!-- <img class="Card" src="/assets/img/payment-chip-credit-card.png" /> -->
+          <img class="Posnet" src="/assets/img/payment-magnetic-card.png" />
+        </div>
+        <div>
+          <p>
+            • Desliza la tarjeta por el Postnet
+          </p>
+          <p>
+            • Espera unos segundos
+          </p>
+          <p>
+            • Retira tu ticket
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</app-body>
+
+<app-custom-error #errorPopup>
+</app-custom-error>

@@ -1,0 +1,93 @@
+{
+  "env": {
+    "name": "#{envName}"
+  },
+  "remote": {
+    "trans": "http://soporte.cinestarsoftware.net:8080/cswstrans/trans.asmx?wsdl",
+    "info": "http://soporte.cinestarsoftware.net:8080/cswsinfo/info.asmx?wsdl"
+  },
+  "production": true,
+  "sellOption": 1,
+  "atmFilter": "ATM",
+  "productsFilter": "CATM",
+  "theatreID": 154,
+  "theatreName": "Cines Multiplex",
+  "theatreGroupID": 154,
+  "workstationId": 2,
+  "timeToIdleWarningSeconds": 120,
+  "timeFromIdleWarningToKickSeconds": 15,
+  "showIntroScreen": true,
+  "withdraw": {
+    "maxTries": 4,
+    "ticketCodeLength": 4
+  },
+  "defaultMoviePoster": "/assets/img/movie.jpg",
+  "defaultProductImage": "/assets/img/combo.jpg",
+  "isQRWithdrawalEnabled": true,
+  "printer": {
+    "serviceBaseUrl": "http://soporte.cinestarsoftware.net:8080/cswsprint",
+    "boxOffice": {
+      "name": "Microsoft XPS Document Writer",
+      "port": ""
+    },
+    "concession": {
+      "name": "Microsoft XPS Document Writer",
+      "port": ""
+    },
+    "receiptConcession": {
+      "name": "Microsoft XPS Document Writer",
+      "port": ""
+    }
+  },
+  "availablePaymentMethods": [
+    {
+      "name": "Visa Crédito",
+      "paymentMethodCode": 1,
+      "creditCardCSID": 1,
+      "logo": "PaymentMethodLogoVisa.png"
+    },
+    {
+      "name": "Mastercard Débito",
+      "paymentMethodCode": 2,
+      "creditCardCSID": 2,
+      "logo": "PaymentMethodLogoMasterCard.png"
+    },
+    {
+      "name": "Efectivo",
+      "paymentMethodCode": 3,
+      "creditCardCSID": 3,
+      "logo": "PaymentMethodLogoUndefined.png"
+    },
+    {
+      "name": "American Express",
+      "paymentMethodCode": 4,
+      "creditCardCSID": 4,
+      "logo": "PaymentMethodLogoUndefined.png"
+    },
+    {
+      "name": "Visa Débito",
+      "paymentMethodCode": 5,
+      "creditCardCSID": 5,
+      "logo": "PaymentMethodLogoVisa.png"
+    },
+    {
+      "name": "Mastercard Crédito",
+      "paymentMethodCode": 6,
+      "creditCardCSID": 6,
+      "logo": "PaymentMethodLogoMasterCard.png"
+    }
+  ], 
+  "finalCustomer": {
+    "name": "Ciente",
+    "lastName": " Final",
+    "ID": 1,
+    "telephone": "1",
+    "email": "test@cinestar.com"
+  },
+  "reloadCacheAfterMinutes": 60,
+  "showPaymentMethodContactless": true,
+  "showPaymentMethodMagnetic": true,
+  "showPaymentMethodChip": true,
+  "paymentTimeoutSeconds": 600,
+  "showClientInvoiceScreen": true
+}

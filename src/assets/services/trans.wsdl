@@ -1,0 +1,1681 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/CSwsTrans/Trans" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/CSwsTrans/Trans" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/CSwsTrans/Trans">
+      <s:element name="Version">
+        <s:complexType />
+      </s:element>
+      <s:element name="VersionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VersionResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSession">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetSessionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetSessionResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ComplexInformation">
+        <s:complexType />
+      </s:element>
+      <s:element name="ComplexInformationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ComplexInformationResult" type="tns:ArrayOfInfoComplejo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInfoComplejo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="InfoComplejo" nillable="true" type="tns:InfoComplejo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="InfoComplejo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdComplejo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ConnectionString" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CheckSell">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pTheatreID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="IDSell" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckSellResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckSellResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Sell">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlSaleData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SellResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SellResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Reserve">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlReserveData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReserveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReserveResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPrices">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pTheatreID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pScheduleID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="pWorkstationID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPricesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPricesResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCreditCards">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pTheatreID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCreditCardsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCreditCardsResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCreditCardsByTicketType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pTheatreID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pTicketTypeID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCreditCardsByTicketTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCreditCardsByTicketTypeResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetZones">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pTheatreID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pScheduleID" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetZonesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetZonesResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetScreenLayout">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pTheatreID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pDistributionID" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetScreenLayoutResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetScreenLayoutResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSeats">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pTheatreID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pScheduleID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="pSessionID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pWorkstation" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSeatsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSeatsResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAvailability">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pTheatreID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pScheduleID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="pZoneID" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAvailabilityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAvailabilityResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsSeatAvailable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pTheatreID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pScheduleID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="pSeatNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsSeatAvailableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IsSeatAvailableResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsNumberedShowTime">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pTehatreID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pScheduleID" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsNumberedShowTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IsNumberedShowTimeResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSalesDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pTheatreID" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSalesDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSalesDateResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRegionalSettings">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetRegionalSettingsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRegionalSettingsResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWorkstation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pTheatreID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="pIPAddress" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWorkstationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWorkstationResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWorkstationByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pTheatreID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pWorkStationID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWorkstationByIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWorkstationByIDResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWorkstations">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pTheatreID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWorkstationsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWorkstationsResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPendingTickets">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pTheatreID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="pID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="pPickUpCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pWorkstationID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPendingTicketsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPendingTicketsResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPendingTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pTheatreID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="pID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="pPickUpCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPendingTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPendingTransactionResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConfirmPrintedTickets">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pTehatreID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="pID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="pPickUpCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pWorkstationID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConfirmPrintedTicketsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmPrintedTicketsResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveEvent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pTheatreID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pEventID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="pDescription" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pWorkstationID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveEventResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveEventResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveLog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pTheatreID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pWorkstationID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="pAplication" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pMethod" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pClass" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pDescription" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveLogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveLogResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DebitType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pTheatreID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DebitTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DebitTypeResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BlockSeat">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pTheatreID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pScheduleID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="pSeatID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pSessionID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="pWorkstationID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BlockSeatResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BlockSeatResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UnblockSeats">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pTheatreID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pSessionID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="pWorkstationID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UnblockSeatsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UnblockSeatsResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UnblockSeat">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pTheatreID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pScheduleID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="pSessionID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="pworkstationID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="pSeatID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UnblockSeatResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UnblockSeatResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrintsVoucherError">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pTheatreID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrintsVoucherErrorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PrintsVoucherErrorResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenerateXMLTest">
+        <s:complexType />
+      </s:element>
+      <s:element name="GenerateXMLTestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GenerateXMLTestResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pTheatreID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pUserID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="pPass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAvailableTheatres">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pTheatreID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pWorkstationID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="pAplicationID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAvailableTheatresResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAvailableTheatresResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveTheatreSettings">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pTheatreID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="pAplicationID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pWorkstationID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="pXmlTheatreSettings" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveTheatreSettingsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveTheatreSettingsResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="VersionSoapIn">
+    <wsdl:part name="parameters" element="tns:Version" />
+  </wsdl:message>
+  <wsdl:message name="VersionSoapOut">
+    <wsdl:part name="parameters" element="tns:VersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSessionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSession" />
+  </wsdl:message>
+  <wsdl:message name="GetSessionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ComplexInformationSoapIn">
+    <wsdl:part name="parameters" element="tns:ComplexInformation" />
+  </wsdl:message>
+  <wsdl:message name="ComplexInformationSoapOut">
+    <wsdl:part name="parameters" element="tns:ComplexInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckSellSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckSell" />
+  </wsdl:message>
+  <wsdl:message name="CheckSellSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckSellResponse" />
+  </wsdl:message>
+  <wsdl:message name="SellSoapIn">
+    <wsdl:part name="parameters" element="tns:Sell" />
+  </wsdl:message>
+  <wsdl:message name="SellSoapOut">
+    <wsdl:part name="parameters" element="tns:SellResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReserveSoapIn">
+    <wsdl:part name="parameters" element="tns:Reserve" />
+  </wsdl:message>
+  <wsdl:message name="ReserveSoapOut">
+    <wsdl:part name="parameters" element="tns:ReserveResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPricesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPrices" />
+  </wsdl:message>
+  <wsdl:message name="GetPricesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPricesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCreditCardsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCreditCards" />
+  </wsdl:message>
+  <wsdl:message name="GetCreditCardsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCreditCardsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCreditCardsByTicketTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCreditCardsByTicketType" />
+  </wsdl:message>
+  <wsdl:message name="GetCreditCardsByTicketTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCreditCardsByTicketTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetZonesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetZones" />
+  </wsdl:message>
+  <wsdl:message name="GetZonesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetZonesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetScreenLayoutSoapIn">
+    <wsdl:part name="parameters" element="tns:GetScreenLayout" />
+  </wsdl:message>
+  <wsdl:message name="GetScreenLayoutSoapOut">
+    <wsdl:part name="parameters" element="tns:GetScreenLayoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSeatsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSeats" />
+  </wsdl:message>
+  <wsdl:message name="GetSeatsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSeatsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAvailabilitySoapIn">
+    <wsdl:part name="parameters" element="tns:GetAvailability" />
+  </wsdl:message>
+  <wsdl:message name="GetAvailabilitySoapOut">
+    <wsdl:part name="parameters" element="tns:GetAvailabilityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsSeatAvailableSoapIn">
+    <wsdl:part name="parameters" element="tns:IsSeatAvailable" />
+  </wsdl:message>
+  <wsdl:message name="IsSeatAvailableSoapOut">
+    <wsdl:part name="parameters" element="tns:IsSeatAvailableResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsNumberedShowTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:IsNumberedShowTime" />
+  </wsdl:message>
+  <wsdl:message name="IsNumberedShowTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:IsNumberedShowTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSalesDateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSalesDate" />
+  </wsdl:message>
+  <wsdl:message name="GetSalesDateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSalesDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRegionalSettingsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRegionalSettings" />
+  </wsdl:message>
+  <wsdl:message name="GetRegionalSettingsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRegionalSettingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkstationSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWorkstation" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkstationSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWorkstationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkstationByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWorkstationByID" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkstationByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWorkstationByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkstationsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWorkstations" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkstationsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWorkstationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPendingTicketsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPendingTickets" />
+  </wsdl:message>
+  <wsdl:message name="GetPendingTicketsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPendingTicketsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPendingTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPendingTransaction" />
+  </wsdl:message>
+  <wsdl:message name="GetPendingTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPendingTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmPrintedTicketsSoapIn">
+    <wsdl:part name="parameters" element="tns:ConfirmPrintedTickets" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmPrintedTicketsSoapOut">
+    <wsdl:part name="parameters" element="tns:ConfirmPrintedTicketsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveEventSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveEvent" />
+  </wsdl:message>
+  <wsdl:message name="SaveEventSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveLogSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveLog" />
+  </wsdl:message>
+  <wsdl:message name="SaveLogSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="DebitTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:DebitType" />
+  </wsdl:message>
+  <wsdl:message name="DebitTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:DebitTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="BlockSeatSoapIn">
+    <wsdl:part name="parameters" element="tns:BlockSeat" />
+  </wsdl:message>
+  <wsdl:message name="BlockSeatSoapOut">
+    <wsdl:part name="parameters" element="tns:BlockSeatResponse" />
+  </wsdl:message>
+  <wsdl:message name="UnblockSeatsSoapIn">
+    <wsdl:part name="parameters" element="tns:UnblockSeats" />
+  </wsdl:message>
+  <wsdl:message name="UnblockSeatsSoapOut">
+    <wsdl:part name="parameters" element="tns:UnblockSeatsResponse" />
+  </wsdl:message>
+  <wsdl:message name="UnblockSeatSoapIn">
+    <wsdl:part name="parameters" element="tns:UnblockSeat" />
+  </wsdl:message>
+  <wsdl:message name="UnblockSeatSoapOut">
+    <wsdl:part name="parameters" element="tns:UnblockSeatResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrintsVoucherErrorSoapIn">
+    <wsdl:part name="parameters" element="tns:PrintsVoucherError" />
+  </wsdl:message>
+  <wsdl:message name="PrintsVoucherErrorSoapOut">
+    <wsdl:part name="parameters" element="tns:PrintsVoucherErrorResponse" />
+  </wsdl:message>
+  <wsdl:message name="GenerateXMLTestSoapIn">
+    <wsdl:part name="parameters" element="tns:GenerateXMLTest" />
+  </wsdl:message>
+  <wsdl:message name="GenerateXMLTestSoapOut">
+    <wsdl:part name="parameters" element="tns:GenerateXMLTestResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUser" />
+  </wsdl:message>
+  <wsdl:message name="GetUserSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAvailableTheatresSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAvailableTheatres" />
+  </wsdl:message>
+  <wsdl:message name="GetAvailableTheatresSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAvailableTheatresResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveTheatreSettingsSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveTheatreSettings" />
+  </wsdl:message>
+  <wsdl:message name="SaveTheatreSettingsSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveTheatreSettingsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="TransSoap">
+    <wsdl:operation name="Version">
+      <wsdl:input message="tns:VersionSoapIn" />
+      <wsdl:output message="tns:VersionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSession">
+      <wsdl:input message="tns:GetSessionSoapIn" />
+      <wsdl:output message="tns:GetSessionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ComplexInformation">
+      <wsdl:input message="tns:ComplexInformationSoapIn" />
+      <wsdl:output message="tns:ComplexInformationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckSell">
+      <wsdl:input message="tns:CheckSellSoapIn" />
+      <wsdl:output message="tns:CheckSellSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Sell">
+      <wsdl:input message="tns:SellSoapIn" />
+      <wsdl:output message="tns:SellSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Reserve">
+      <wsdl:input message="tns:ReserveSoapIn" />
+      <wsdl:output message="tns:ReserveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPrices">
+      <wsdl:input message="tns:GetPricesSoapIn" />
+      <wsdl:output message="tns:GetPricesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCreditCards">
+      <wsdl:input message="tns:GetCreditCardsSoapIn" />
+      <wsdl:output message="tns:GetCreditCardsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCreditCardsByTicketType">
+      <wsdl:input message="tns:GetCreditCardsByTicketTypeSoapIn" />
+      <wsdl:output message="tns:GetCreditCardsByTicketTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetZones">
+      <wsdl:input message="tns:GetZonesSoapIn" />
+      <wsdl:output message="tns:GetZonesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetScreenLayout">
+      <wsdl:input message="tns:GetScreenLayoutSoapIn" />
+      <wsdl:output message="tns:GetScreenLayoutSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSeats">
+      <wsdl:input message="tns:GetSeatsSoapIn" />
+      <wsdl:output message="tns:GetSeatsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailability">
+      <wsdl:input message="tns:GetAvailabilitySoapIn" />
+      <wsdl:output message="tns:GetAvailabilitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsSeatAvailable">
+      <wsdl:input message="tns:IsSeatAvailableSoapIn" />
+      <wsdl:output message="tns:IsSeatAvailableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsNumberedShowTime">
+      <wsdl:input message="tns:IsNumberedShowTimeSoapIn" />
+      <wsdl:output message="tns:IsNumberedShowTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSalesDate">
+      <wsdl:input message="tns:GetSalesDateSoapIn" />
+      <wsdl:output message="tns:GetSalesDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRegionalSettings">
+      <wsdl:input message="tns:GetRegionalSettingsSoapIn" />
+      <wsdl:output message="tns:GetRegionalSettingsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkstation">
+      <wsdl:input message="tns:GetWorkstationSoapIn" />
+      <wsdl:output message="tns:GetWorkstationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkstationByID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return WorkStation by Id</wsdl:documentation>
+      <wsdl:input message="tns:GetWorkstationByIDSoapIn" />
+      <wsdl:output message="tns:GetWorkstationByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkstations">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return WorkStation List</wsdl:documentation>
+      <wsdl:input message="tns:GetWorkstationsSoapIn" />
+      <wsdl:output message="tns:GetWorkstationsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPendingTickets">
+      <wsdl:input message="tns:GetPendingTicketsSoapIn" />
+      <wsdl:output message="tns:GetPendingTicketsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPendingTransaction">
+      <wsdl:input message="tns:GetPendingTransactionSoapIn" />
+      <wsdl:output message="tns:GetPendingTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmPrintedTickets">
+      <wsdl:input message="tns:ConfirmPrintedTicketsSoapIn" />
+      <wsdl:output message="tns:ConfirmPrintedTicketsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveEvent">
+      <wsdl:input message="tns:SaveEventSoapIn" />
+      <wsdl:output message="tns:SaveEventSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveLog">
+      <wsdl:input message="tns:SaveLogSoapIn" />
+      <wsdl:output message="tns:SaveLogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DebitType">
+      <wsdl:input message="tns:DebitTypeSoapIn" />
+      <wsdl:output message="tns:DebitTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BlockSeat">
+      <wsdl:input message="tns:BlockSeatSoapIn" />
+      <wsdl:output message="tns:BlockSeatSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UnblockSeats">
+      <wsdl:input message="tns:UnblockSeatsSoapIn" />
+      <wsdl:output message="tns:UnblockSeatsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UnblockSeat">
+      <wsdl:input message="tns:UnblockSeatSoapIn" />
+      <wsdl:output message="tns:UnblockSeatSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrintsVoucherError">
+      <wsdl:input message="tns:PrintsVoucherErrorSoapIn" />
+      <wsdl:output message="tns:PrintsVoucherErrorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateXMLTest">
+      <wsdl:input message="tns:GenerateXMLTestSoapIn" />
+      <wsdl:output message="tns:GenerateXMLTestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get User</wsdl:documentation>
+      <wsdl:input message="tns:GetUserSoapIn" />
+      <wsdl:output message="tns:GetUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableTheatres">
+      <wsdl:input message="tns:GetAvailableTheatresSoapIn" />
+      <wsdl:output message="tns:GetAvailableTheatresSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveTheatreSettings">
+      <wsdl:input message="tns:SaveTheatreSettingsSoapIn" />
+      <wsdl:output message="tns:SaveTheatreSettingsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TransSoap" type="tns:TransSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Version">
+      <soap:operation soapAction="http://tempuri.org/CSwsTrans/Trans/Version" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSession">
+      <soap:operation soapAction="http://tempuri.org/CSwsTrans/Trans/GetSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ComplexInformation">
+      <soap:operation soapAction="http://tempuri.org/CSwsTrans/Trans/ComplexInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckSell">
+      <soap:operation soapAction="http://tempuri.org/CSwsTrans/Trans/CheckSell" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sell">
+      <soap:operation soapAction="http://tempuri.org/CSwsTrans/Trans/Sell" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Reserve">
+      <soap:operation soapAction="http://tempuri.org/CSwsTrans/Trans/Reserve" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPrices">
+      <soap:operation soapAction="http://tempuri.org/CSwsTrans/Trans/GetPrices" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCreditCards">
+      <soap:operation soapAction="http://tempuri.org/CSwsTrans/Trans/GetCreditCards" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCreditCardsByTicketType">
+      <soap:operation soapAction="http://tempuri.org/CSwsTrans/Trans/GetCreditCardsByTicketType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetZones">
+      <soap:operation soapAction="http://tempuri.org/CSwsTrans/Trans/GetZones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScreenLayout">
+      <soap:operation soapAction="http://tempuri.org/CSwsTrans/Trans/GetScreenLayout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSeats">
+      <soap:operation soapAction="http://tempuri.org/CSwsTrans/Trans/GetSeats" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailability">
+      <soap:operation soapAction="http://tempuri.org/CSwsTrans/Trans/GetAvailability" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsSeatAvailable">
+      <soap:operation soapAction="http://tempuri.org/CSwsTrans/Trans/IsSeatAvailable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsNumberedShowTime">
+      <soap:operation soapAction="http://tempuri.org/CSwsTrans/Trans/IsNumberedShowTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSalesDate">
+      <soap:operation soapAction="http://tempuri.org/CSwsTrans/Trans/GetSalesDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRegionalSettings">
+      <soap:operation soapAction="http://tempuri.org/CSwsTrans/Trans/GetRegionalSettings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkstation">
+      <soap:operation soapAction="http://tempuri.org/CSwsTrans/Trans/GetWorkstation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkstationByID">
+      <soap:operation soapAction="http://tempuri.org/CSwsTrans/Trans/GetWorkstationByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkstations">
+      <soap:operation soapAction="http://tempuri.org/CSwsTrans/Trans/GetWorkstations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPendingTickets">
+      <soap:operation soapAction="http://tempuri.org/CSwsTrans/Trans/GetPendingTickets" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPendingTransaction">
+      <soap:operation soapAction="http://tempuri.org/CSwsTrans/Trans/GetPendingTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmPrintedTickets">
+      <soap:operation soapAction="http://tempuri.org/CSwsTrans/Trans/ConfirmPrintedTickets" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveEvent">
+      <soap:operation soapAction="http://tempuri.org/CSwsTrans/Trans/SaveEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveLog">
+      <soap:operation soapAction="http://tempuri.org/CSwsTrans/Trans/SaveLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DebitType">
+      <soap:operation soapAction="http://tempuri.org/CSwsTrans/Trans/DebitType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BlockSeat">
+      <soap:operation soapAction="http://tempuri.org/CSwsTrans/Trans/BlockSeat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnblockSeats">
+      <soap:operation soapAction="http://tempuri.org/CSwsTrans/Trans/UnblockSeats" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnblockSeat">
+      <soap:operation soapAction="http://tempuri.org/CSwsTrans/Trans/UnblockSeat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrintsVoucherError">
+      <soap:operation soapAction="http://tempuri.org/CSwsTrans/Trans/PrintsVoucherError" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateXMLTest">
+      <soap:operation soapAction="http://tempuri.org/CSwsTrans/Trans/GenerateXMLTest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUser">
+      <soap:operation soapAction="http://tempuri.org/CSwsTrans/Trans/GetUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableTheatres">
+      <soap:operation soapAction="http://tempuri.org/CSwsTrans/Trans/GetAvailableTheatres" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveTheatreSettings">
+      <soap:operation soapAction="http://tempuri.org/CSwsTrans/Trans/SaveTheatreSettings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TransSoap12" type="tns:TransSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Version">
+      <soap12:operation soapAction="http://tempuri.org/CSwsTrans/Trans/Version" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSession">
+      <soap12:operation soapAction="http://tempuri.org/CSwsTrans/Trans/GetSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ComplexInformation">
+      <soap12:operation soapAction="http://tempuri.org/CSwsTrans/Trans/ComplexInformation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckSell">
+      <soap12:operation soapAction="http://tempuri.org/CSwsTrans/Trans/CheckSell" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sell">
+      <soap12:operation soapAction="http://tempuri.org/CSwsTrans/Trans/Sell" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Reserve">
+      <soap12:operation soapAction="http://tempuri.org/CSwsTrans/Trans/Reserve" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPrices">
+      <soap12:operation soapAction="http://tempuri.org/CSwsTrans/Trans/GetPrices" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCreditCards">
+      <soap12:operation soapAction="http://tempuri.org/CSwsTrans/Trans/GetCreditCards" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCreditCardsByTicketType">
+      <soap12:operation soapAction="http://tempuri.org/CSwsTrans/Trans/GetCreditCardsByTicketType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetZones">
+      <soap12:operation soapAction="http://tempuri.org/CSwsTrans/Trans/GetZones" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScreenLayout">
+      <soap12:operation soapAction="http://tempuri.org/CSwsTrans/Trans/GetScreenLayout" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSeats">
+      <soap12:operation soapAction="http://tempuri.org/CSwsTrans/Trans/GetSeats" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailability">
+      <soap12:operation soapAction="http://tempuri.org/CSwsTrans/Trans/GetAvailability" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsSeatAvailable">
+      <soap12:operation soapAction="http://tempuri.org/CSwsTrans/Trans/IsSeatAvailable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsNumberedShowTime">
+      <soap12:operation soapAction="http://tempuri.org/CSwsTrans/Trans/IsNumberedShowTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSalesDate">
+      <soap12:operation soapAction="http://tempuri.org/CSwsTrans/Trans/GetSalesDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRegionalSettings">
+      <soap12:operation soapAction="http://tempuri.org/CSwsTrans/Trans/GetRegionalSettings" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkstation">
+      <soap12:operation soapAction="http://tempuri.org/CSwsTrans/Trans/GetWorkstation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkstationByID">
+      <soap12:operation soapAction="http://tempuri.org/CSwsTrans/Trans/GetWorkstationByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkstations">
+      <soap12:operation soapAction="http://tempuri.org/CSwsTrans/Trans/GetWorkstations" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPendingTickets">
+      <soap12:operation soapAction="http://tempuri.org/CSwsTrans/Trans/GetPendingTickets" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPendingTransaction">
+      <soap12:operation soapAction="http://tempuri.org/CSwsTrans/Trans/GetPendingTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmPrintedTickets">
+      <soap12:operation soapAction="http://tempuri.org/CSwsTrans/Trans/ConfirmPrintedTickets" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveEvent">
+      <soap12:operation soapAction="http://tempuri.org/CSwsTrans/Trans/SaveEvent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveLog">
+      <soap12:operation soapAction="http://tempuri.org/CSwsTrans/Trans/SaveLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DebitType">
+      <soap12:operation soapAction="http://tempuri.org/CSwsTrans/Trans/DebitType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BlockSeat">
+      <soap12:operation soapAction="http://tempuri.org/CSwsTrans/Trans/BlockSeat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnblockSeats">
+      <soap12:operation soapAction="http://tempuri.org/CSwsTrans/Trans/UnblockSeats" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnblockSeat">
+      <soap12:operation soapAction="http://tempuri.org/CSwsTrans/Trans/UnblockSeat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrintsVoucherError">
+      <soap12:operation soapAction="http://tempuri.org/CSwsTrans/Trans/PrintsVoucherError" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateXMLTest">
+      <soap12:operation soapAction="http://tempuri.org/CSwsTrans/Trans/GenerateXMLTest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUser">
+      <soap12:operation soapAction="http://tempuri.org/CSwsTrans/Trans/GetUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableTheatres">
+      <soap12:operation soapAction="http://tempuri.org/CSwsTrans/Trans/GetAvailableTheatres" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveTheatreSettings">
+      <soap12:operation soapAction="http://tempuri.org/CSwsTrans/Trans/SaveTheatreSettings" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Trans">
+    <wsdl:port name="TransSoap" binding="tns:TransSoap">
+      <soap:address location="./cswstrans/trans.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TransSoap12" binding="tns:TransSoap12">
+      <soap12:address location="./cswstrans/trans.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

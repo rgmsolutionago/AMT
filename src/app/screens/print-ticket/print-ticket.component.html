@@ -1,0 +1,59 @@
+<app-header>
+  <app-nav-bar activePage="retiro"></app-nav-bar>
+</app-header>
+
+<app-body>
+  <div id="PrintTicket">
+    <div class="row PrintTicketContent animated fadeIn">
+      <div class="PrintTicketBg animated slideInDown">
+        <h1 class="PageTitle animated fadeIn">Retire sus tickets</h1>
+      </div>
+      <div class="col right">
+        <div class="OrderList">
+          <div class="OrderListHeader">
+            <h4>Su orden</h4>
+            <h2>{{ order?.selectedFeature?.OriginalTitle }}</h2>
+            <h3>{{ order?.show?.parsedDate | titlecase }} - {{order?.show?.StartTime}} </h3>
+            <h3>{{ order?.show?.ScreenName}}</h3>
+          </div>
+          <ul class="TicketItems">
+            <li *ngFor="let category of order?.categories">
+              <div class="col text-left">
+                <span>{{ category?.quantity }} </span><span>{{ category?.Name }}</span>
+              </div>
+              <div class="col text-right">
+                <span><b>{{ 'theatre_currency' | translate:'es' | async }}</b> {{ category?.Price }}</span>
+              </div>
+            </li>
+
+            <li *ngFor="let product of order?.products">
+              <div class="col text-left">
+                <span>{{ product?.quantity }}</span> <span> {{ product?.NomProducto }}</span>
+              </div>
+              <div class="col text-right">
+                <span><b>{{ 'theatre_currency' | translate:'es' | async }}</b> {{ productPrice(product) }}</span>
+              </div>
+            </li>
+          </ul>
+          <ul class="TicketTotals">
+            <li>
+              <div class="col text-left"> <span>Total</span> </div>
+              <div class="col text-right">
+                <span><b>{{ 'theatre_currency' | translate:'es' | async }}</b> {{ order?.total }}</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footerAction animated slideInUp">
+      <div class="row">
+        <div class="col left">
+        </div>
+        <div class="col right">
+          <a class="btn btn-primary btn-icon-next" routerLink="/clean-cache"><i></i>Finalizar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</app-body>

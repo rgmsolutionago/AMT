@@ -1,0 +1,534 @@
+@import "variables";
+
+/*--*/
+
+.MovieDetail {
+  .MovieHeaderTitle {
+    color: $ColorLight;
+    display: flex;
+    position: fixed;
+    top: 10vh;
+    left: 2vw;
+    right: 2vw;
+    width: 96vw;
+
+    .PageTitle {
+      color: $ColorLight;
+      padding: 0.5vw 0 0 0;
+      white-space: nowrap;
+    }
+
+    .MovieTitle {
+      color: $ColorLight;
+      @include FontFamNormal;
+      line-height: 1.5;
+      padding: 0;
+      font-size: 3.5vw;
+      font-weight: bold;
+      width: 76vw;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .MovieType {
+      color: $ColorLight;
+      @include FontFamNormal;
+      font-weight: 400;
+      line-height: 1;
+      padding: 0.5vw 0 0 0;
+      font-size: 2vw;
+    }
+  }
+
+  .NextFuntion {
+    background-color: $ColorLight;
+    padding: 1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    border-radius: 4px;
+    position: relative;
+    right: -2vw;
+    top: 1vw;
+
+    h4 {
+      color: $Color1;
+      font-size: 2vw;
+    }
+
+    h5 {
+      color: $Color1;
+      font-size: 3vw;
+    }
+  }
+
+  .SelectFeatureArea {
+    top: 9vh;
+    left: 2vw;
+    right: 2vw;
+    width: 80vw;
+    height: 8vh;
+
+    ul {
+      display: flex;
+      justify-content: flex-start;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      padding-top: 4px;
+      width: 75vw;
+
+      li {
+        margin-right: 20px;
+
+        .btn-Feature {
+          color: $ColorLight;
+          text-align: center;
+          width: 100%;
+          background-color: $ColorGray;
+          font-size: 1vw;
+          padding: 0.8vw;
+          display: inline-block;
+
+          &.active {
+            color: $ColorLight;
+            border: 0px solid $Color1 !important;
+            background-color: $Color1 !important;
+          }
+
+          p {
+            height: 1vw;
+            margin: 2px;
+            min-width: 8vw;
+            white-space: nowrap;
+          }
+
+          span {
+            margin: 0px 4px;
+          }
+        }
+      }
+    }
+  }
+
+  .MovieContent {
+    color: $ColorLight;
+    display: flex;
+    position: fixed;
+    top: 29vh;
+    left: 2vw;
+    right: 2vw;
+    width: 96vw;
+    height: 53vh;
+    overflow: hidden;
+    z-index: 10;
+
+    .col {
+      &.left {
+        width: 20.5vw;
+
+        .MovieInfo {
+          position: absolute;
+          bottom: 0;
+          display: block;
+          z-index: 10;
+          background-color: $ColorDarkWithTransparency;
+          padding: 1.5vw 1vw;
+          width: 100%;
+          border-radius: 0 0 20px 20px;
+          color: $ColorLight;
+        }
+
+        .PosterBackground {
+          background-color: $ColorDarkWithTransparency;
+          width: 100%;
+          height: 100%;
+          border-radius: 20px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 0;
+        }
+
+        figure {
+          overflow: hidden;
+          display: block;
+          position: relative;
+          text-align: center;
+          height: 100%;
+
+          // .blur {
+          //   filter: blur(10px);
+          //   width: 100%;
+          //   height: 100%;
+          //   position: absolute;
+          //   z-index: 1;
+          // }
+          img {
+            height: 100%;
+            width: 100%;
+            z-index: 2;
+            position: relative;
+          }
+        }
+      }
+
+      &.right {
+        width: 79vw;
+
+        .SelectFuntionDateArea {
+          color: $ColorLight;
+          background-color: $ColorLight;
+          display: flex;
+          position: fixed;
+          top: 29vh;
+          left: 39vw;
+          right: 2vw;
+          width: auto;
+          height: 52.8vh;
+          overflow-y: auto;
+          overflow-x: hidden;
+          padding-left: 2vw;
+          border-radius: 4px;
+
+          h5 {
+            color: $Color1;
+            position: absolute;
+            padding: 0.8vw 1vw;
+            font-size: 1.5vw;
+            font-weight: 600;
+          }
+
+          .FuntionDate {
+            margin: 2.2vw -2vw 0 0;
+            padding: 1vw 0 0 1vw;
+
+            li {
+              float: left;
+              position: relative;
+              text-align: center;
+              cursor: pointer;
+              height: 13vh;
+              //width: 16vw;
+              padding: 0.3vw;
+              margin: 0.3vw;
+
+              .btn-FuntionDate {
+                color: $ColorLight;
+                text-align: center;
+                width: 100%;
+                background-color: $ColorGray;
+                padding: 2vh 3vw;
+
+                &.active {
+                  color: $ColorLight;
+                  border: 0px solid $Color1 !important;
+                  background-color: $Color1 !important;
+                }
+
+                span {
+                  color: $ColorLight;
+                  display: block;
+                  font-size: 7vh;
+                }
+              }
+
+              .btn-FuntionDate-Disabled {
+                border-radius: 6px !important;
+                text-transform: uppercase;
+                background-color: $ColorDarkWithTransparency;
+                font-size: 1.8vw;
+                font-family: "Open Sans", sans-serif;
+                font-style: normal;
+                display: inline-block;
+                padding: 1.2vw 3vw;
+                width: auto;
+                text-decoration: none;
+                color: $ColorLight;
+                cursor: not-allowed;
+                height: 12vh;
+
+                span {
+                  @include FontFamNormal;
+                  color: $ColorLight;
+                  font-size: 7vh;
+                }
+              }
+
+              img {
+                position: absolute;
+                height: 11vh;
+                width: 7vw;
+              }
+            }
+          }
+        }
+
+        .SelectDateArea {
+          color: $ColorLight;
+          background-color: $ColorLight;
+          display: flex;
+          position: fixed;
+          top: 29vh;
+          left: 23.4vw;
+          right: 2vw;
+          width: 16vw;
+          height: 52.8vh;
+          text-align: left;
+          padding-top: 5px;
+          padding-left: 2px;
+          border-radius: 4px;
+
+          .DateArea {
+            overflow-x: hidden;
+            overflow-y: auto;
+            width: 100%;
+
+            li {
+              margin: 8px;
+
+              .btn-FuntionDate {
+                width: 100%;
+                display: block;
+                position: relative;
+                text-align: center;
+                background-color: $ColorLight;
+                cursor: pointer;
+                height: 10vh;
+                padding: 0.3vw;
+
+                span {
+                  color: $Color1;
+                  @include FontFamBold;
+                  font-size: 0.9em;
+                  color: $Color1;
+                  line-height: 2.5em;
+                }
+
+                &.active {
+                  color: $Color1;
+                  background-color: $Color2;
+
+                  span {
+                    color: $Color1;
+                  }
+
+                  // &:before {
+                  //   content: "";
+                  //   position: absolute;
+                  //   background-color: transparent;
+                  //   z-index: 2;
+                  //   top: -30px;
+                  //   left: 50%;
+                  //   width: 0;
+                  //   height: 0;
+                  //   border-style: solid;
+                  //   border-width: 0 15px 30px 15px;
+                  //   border-color: transparent transparent $Color2 transparent;
+                  //   transform: translateX(-40%);
+                  // }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#MovieFunction {
+  .MovieFunctionContent {
+    display: flex;
+
+    >.col {
+      background-color: $ColorLight;
+      padding: 1vw 1vw 0vw 1vw;
+      float: left;
+      position: fixed;
+      margin: 1vw 0vw;
+      height: 61vh;
+      width: 62vw;
+
+      &.left {
+        left: 2vw;
+        overflow: hidden;
+        overflow-y: auto;
+        border-radius: 4px;
+      }
+
+      &.right {
+        color: $ColorDark;
+        left: 66vw;
+        width: 32vw;
+        height: 59.2vh;
+
+        &:after {
+          content: "";
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='738' height='83'%3E%3Cpath fill-rule='evenodd' fill='%23EEF1F3' d='M717 82h-5l-17-11c-2-1-4-2-5-1l-14 12h-4l-18-11c-1-1-3-2-4-1l-14 12h-4l-18-11c-1-1-2-2-4-1l-14 12h-4l-18-11c-1-1-3-2-5-1l-13 12h-5l-17-11c-1-1-3-2-5-1l-13 12h-5l-17-11-2-2-14 13h-5l-17-11c-2-1-4-2-5-1l-14 12h-4l-18-11c-1-1-3-2-4-1l-14 12h-4l-18-11c-1-1-2-2-4-1l-14 12h-4l-18-11c-1-1-3-2-5-1l-13 12h-5l-17-11c-1-1-3-2-5-1l-13 12h-5l-17-11-2-2-14 13h-5l-17-11c-2-1-4-2-5-1l-14 12h-4l-18-11c-1-1-3-2-4-1l-14 12h-4l-18-11c-1-1-2-2-4-1l-14 12h-4L96 71c-1-1-3-2-5-1L78 82h-5L56 71c-1-1-3-2-5-1L38 82h-5L16 71c-1-1-3-2-5-1L0 80V0h738v63l-21 19z'/%3E%3C/svg%3E");
+          display: block;
+          background-repeat: no-repeat;
+          background-position: left bottom;
+          height: 25px;
+          bottom: 0vh;
+          position: relative;
+          left: -1vw;
+          width: 32vw;
+        }
+      }
+
+      ul.TicketFunction {
+        margin: 0;
+        padding: 0;
+
+        li {
+          margin: 0 0 2vh 0;
+          padding: 0;
+          display: flex;
+
+          .Promo {
+            display: flex;
+            flex-wrap: wrap;
+            background-color: $ColorGray;
+            min-height: 10vh;
+            height: auto;
+            vertical-align: middle;
+            width: 40vw;
+            font-size: 3vh;
+            align-items: center;
+            padding: 1vw 3vw;
+            border-radius: 4px 0 0 4px;
+
+            .Title {
+              display: block;
+              padding: 1vh 0;
+              line-height: 1;
+              color: $ColorLight;
+              @include FontFamBold;
+              width: 100%;
+            }
+
+            .Price {
+              display: block;
+              font-size: 2vh;
+              width: 100%;
+              color: $ColorLight;
+            }
+          }
+
+          .PromoQuantity {
+            display: none;
+            width: 20vw;
+            vertical-align: middle;
+            font-size: 2vh;
+            padding: 0 2vw;
+            text-align: center;
+            color: $ColorLight;
+            border-radius: 0 4px 4px 0;
+
+            .Title {
+              display: block;
+              width: 100%;
+              color: $ColorLight;
+              line-height: 2;
+            }
+
+            .Quantity {
+              display: inline-table;
+              text-align: center;
+              color: $ColorLight;
+              top: 1vw;
+              position: relative;
+
+              .Less {
+                display: inline-block;
+                cursor: pointer;
+                width: 3vw;
+                height: 7vh;
+                background-color: $Color2;
+                -webkit-mask-image: url("data:image/svg+xml,%3Csvg style='color: white' xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-dash-circle' viewBox='0 0 16 16'%3E%3Cpath d='M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z' fill='white'%3E%3C/path%3E%3Cpath d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z' fill='white'%3E%3C/path%3E%3C/svg%3E");
+                mask-image: url("data:image/svg+xml,%3Csvg style='color: white' xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-dash-circle' viewBox='0 0 16 16'%3E%3Cpath d='M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z' fill='white'%3E%3C/path%3E%3Cpath d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z' fill='white'%3E%3C/path%3E%3C/svg%3E");
+                -webkit-mask-repeat: no-repeat;
+                mask-repeat: no-repeat;
+                -webkit-mask-size: 100% 100%;
+                mask-size: 100% 100%;
+                transition: background-color 200ms;
+              }
+
+              .More {
+                display: inline-block;
+                cursor: pointer;
+                width: 3vw;
+                height: 7vh;
+                background-color: $Color2;
+                -webkit-mask-image: url("data:image/svg+xml,%3Csvg style='color: white;' xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-plus-circle' viewBox='0 0 16 16'%3E%3Cpath d='M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z' fill='currentColor'%3E%3C/path%3E%3Cpath d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z' fill='currentColor'%3E%3C/path%3E%3C/svg%3E");
+                mask-image: url("data:image/svg+xml,%3Csvg style='color: white;' xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-plus-circle' viewBox='0 0 16 16'%3E%3Cpath d='M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z' fill='currentColor'%3E%3C/path%3E%3Cpath d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z' fill='currentColor'%3E%3C/path%3E%3C/svg%3E");
+                -webkit-mask-repeat: no-repeat;
+                mask-repeat: no-repeat;
+                -webkit-mask-size: 100% 100%;
+                mask-size: 100% 100%;
+                transition: background-color 200ms;
+              }
+
+              .QuantityNum {
+                display: inline-block;
+                font-size: 3vw;
+                width: 6vw;
+                height: 7vh;
+                line-height: 7vh;
+                vertical-align: top;
+                color: $ColorLight;
+              }
+            }
+          }
+
+          &.active {
+            .Promo {
+              display: block;
+              background-color: $Color1;
+            }
+
+            .PromoQuantity {
+              display: inline-block;
+              background-color: $Color1;
+            }
+          }
+        }
+      }
+
+      .TicketTotals {
+        position: relative;
+        padding: 0;
+        line-height: 4vh;
+        vertical-align: top;
+      }
+    }
+  }
+}
+
+figure,
+figure img {
+  transition: all 0.5s ease-in-out;
+  border-radius: 20px;
+}
+
+figure.popup {
+  position: fixed !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  text-align: center !important;
+  top: 0vh !important;
+  z-index: 9999 !important;
+  background-color: rgba(0, 0, 0, 0.9) !important;
+  left: 0vh !important;
+}
+
+figure.popup img {
+  height: 96vh !important;
+  width: auto !important;
+  top: 2vh !important;
+}

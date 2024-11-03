@@ -1,0 +1,75 @@
+<app-header>
+  <app-nav-bar activePage="funciones"></app-nav-bar>
+</app-header>
+
+<app-body>
+  <div id="SeleccionButaca">
+    <div class="row">
+      <h1 class="PageTitle animated fadeIn">Seleccione butacas para esta función</h1>
+      <div class="InfoButacas animated fadeIn">
+        <div class="Info col"><img src="/assets/img/seat-available.png" /><span>Disponible</span></div>
+        <div class="Info col" *ngIf="hasPreferencial"><img src="/assets/img/seat-available-handicap.png" /><span>Disponible discapacitado</span></div>
+        <div class="Info col"><img src="/assets/img/seat-selected.png" /><span>Seleccionada</span></div>
+        <div class="Info col" *ngIf="hasPreferencial"><img src="/assets/img/seat-selected-handicap.png" /><span>Seleccionada discapacitado</span></div>
+        <div class="Info col"><img src="/assets/img/seat-blocked.png" /><span>No Disponible</span></div>
+        <!-- <div class="Info"><img src="/assets/img/SeatOrange.png" /><span>Ocupada</span></div> -->
+        
+        <div>
+          <img #seatAvailable src="/assets/img/seat-available.png" hidden="true" />
+          <img #seatSelected src="/assets/img/seat-selected.png" hidden="true" />
+          <img #seatBlocked src="/assets/img/seat-blocked.png" hidden="true" />
+          <img #seatAvailableHandicap src="/assets/img/seat-available-handicap.png" hidden="true" />
+          <img #seatSelectedHandicap src="/assets/img/seat-selected-handicap.png" hidden="true" />
+          <!-- <img #seatOrange src="/assets/img/seatOrange.png" hidden="true" /> -->
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="CanvasWrapper animated fadeIn">
+        <canvas #seatCanvas id="seatCanvas" width="1000" height="500">El componente no funcionó adecuadamente.</canvas>
+      </div>
+      <div class="SeatSelection">
+        <div class="list-container">
+          <h2>Butacas Seleccionadas</h2>
+          <div class="list">
+            <ul *ngIf="selectedSeatsCounter != 0 && cinema != undefined">
+              <li *ngFor="let seat of selectedSeats">
+                <span>{{displaySeat(seat)}}</span>
+              </li>
+            </ul>
+            <div class="no-seat-selected" *ngIf="selectedSeatsCounter == 0">
+              <span>No hay butacas seleccionadas</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="TotalSeats">
+          <h4>Butacas en su orden</h4>
+          <h5>{{ totalSeats }}</h5>
+        </div>
+        <div class="SeltectedSeats">
+          <h4>Butacas seleccionadas</h4>
+          <h5>{{ selectedSeatsCounter }}</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="clearfix"></div>
+    <div class="footerAction animated slideInUp">
+      <div class="row">
+        <div class="col left">
+          <a class="btn btn-default btn-icon-back" routerLink="/categorias"><i></i>Atrás</a>
+          <a class="btn btn-default btn-icon-cancel" routerLink="/clean-cache"><i></i>Cancelar</a>
+        </div>
+        <div class="col right">
+          <button [disabled]="!isSelectionReady()" (click)="next()"
+            class="btn btn-primary btn-icon-next"><i></i>Siguiente</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-popup #errorPopup>
+    No se pudo completar la selección de asientos, seleccione otros y vuelva a intentarlo.
+  </app-popup>
+</app-body>

@@ -1,0 +1,400 @@
+@import "variables";
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+@-ms-viewport {
+    width: device-width;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+[hidden],
+.hidden {
+    display: none !important;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+    @include FontFamNormal;
+}
+
+html {
+    @include FontFamNormal;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -ms-overflow-style: scrollbar;
+    -webkit-tap-highlight-color: transparent;
+    height: 100%;
+}
+
+body {
+    overflow: hidden;
+    background-image: url("../img/bg.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    min-height: 100%;
+    @include FontFamNormal;
+    object-fit: contain;
+    position: fixed !important;
+    top: 0px !important;
+    right: 0px !important;
+    bottom: 0px !important;
+    left: 0px !important;
+    box-sizing: border-box !important;
+    min-width: 0px !important;
+    max-width: none !important;
+    min-height: 0px !important;
+    max-height: none !important;
+    width: 100% !important;
+    height: 100% !important;
+    transform: none !important;
+    margin: 0px !important;
+}
+
+ol,
+ul {
+    list-style: none
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+caption,
+th,
+td {
+    text-align: left;
+    font-weight: normal;
+    vertical-align: middle;
+}
+
+a img {
+    border: none;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+    display: block
+}
+video,
+#bgvid {
+  width: 100vw;
+  height: 100vh;
+}
+:-webkit-full-screen video,
+video {
+    width: 100%;
+    height: 100%;
+}
+
+.uppercase {
+    text-transform: uppercase
+}
+
+.text-center {
+    text-align: center
+}
+
+.text-left {
+    text-align: left
+}
+
+.text-right {
+    text-align: right
+}
+
+.float-right {
+    float: right;
+    width: auto;
+}
+
+.PageTitle {
+    color: white;
+    font-size: $FontSizePageTitle;
+    @include FontFamNormal;
+    display: block;
+    position: relative;
+    padding: 1.5vw 0 0.5vw 2vw;
+}
+
+.version{
+    color:white;
+}
+
+
+.row {
+    display: block;
+    position: relative;
+    float: left;
+    width: 100%;
+    .col {
+        width: 50%;
+        padding: 0;
+        margin: 0;
+        float: none;
+        display: block;
+        position: relative;
+    }
+    .col+.col {
+        width: 50%;
+        padding: 0;
+        margin: 0;
+        float: right;
+        text-align: right !important;
+        display: block;
+    }
+    .fifty {
+        padding: 5vh 0;
+        width: 40vw;
+        display: block;
+        float: left;
+        text-align: right;
+    }
+    .fifty+.fifty {
+        text-align: left;
+    }
+    .main {
+        display: block;
+        width: 100%;
+    }
+}
+
+  
+
+.btn {
+    border-radius: 6px !important;
+    text-transform: uppercase;
+    background-color: $Color1;
+    font-size: $BotonesFontSize;
+    @include FontFamNormal;
+    display: inline-block;
+    padding: 2vw 3vw;
+    width: auto;
+    text-decoration: none;
+    color: $ColorLight;
+    border: 0 none !important;
+    box-shadow: 0 0 4px $ColorGrayLight;
+    &.btn-primary {
+        background-color: $Color1;
+
+        // &:disabled{
+        //     background-color: red !important;
+        // }
+    }
+    &.btn-default {
+        background-color: $ColorGray;
+    }
+    &[disabled] {
+        background-color: $ColorGrayLight;
+        opacity: 0.6;
+    }
+    &.btn-block {
+        width: 100% !important;
+        display: block;
+    }
+    &.btn-icon-back i {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='29' height='55'%3E%3Cpath fill-rule='evenodd' fill='%23FFF' d='M.455 28.077L25.44 53.55c.589.6 1.532.6 2.12 0a1.542 1.542 0 0 0 0-2.161L3.641 27.002 27.56 2.614a1.542 1.542 0 0 0 0-2.161A1.494 1.494 0 0 0 26.506 0c-.378 0-.766.148-1.055.453L.467 25.927a1.54 1.54 0 0 0-.012 2.15z'/%3E%3C/svg%3E");
+    }
+    &.btn-icon-cancel i {
+        background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="52px" height="52px"%3E%3Cpath fill-rule="evenodd" fill="rgb(255, 255, 255)" d="M25.999,52.000 C11.663,52.000 -0.001,40.337 -0.001,26.000 C-0.001,11.663 11.663,-0.000 25.999,-0.000 C40.335,-0.000 51.999,11.663 51.999,26.000 C51.999,40.337 40.335,52.000 25.999,52.000 ZM25.999,2.000 C12.765,2.000 1.998,12.767 1.998,26.000 C1.998,39.233 12.765,50.000 25.999,50.000 C39.231,50.000 49.998,39.233 49.998,26.000 C49.998,12.767 39.231,2.000 25.999,2.000 ZM35.706,35.707 C35.510,35.902 35.254,36.000 34.999,36.000 C34.743,36.000 34.486,35.902 34.291,35.707 L25.999,27.414 L17.705,35.707 C17.510,35.902 17.255,36.000 16.999,36.000 C16.743,36.000 16.486,35.902 16.291,35.707 C15.901,35.316 15.901,34.684 16.291,34.293 L24.585,26.000 L16.291,17.707 C15.901,17.316 15.901,16.684 16.291,16.293 C16.683,15.902 17.315,15.902 17.705,16.293 L25.999,24.586 L34.291,16.293 C34.683,15.902 35.314,15.902 35.706,16.293 C36.096,16.684 36.096,17.316 35.706,17.707 L27.412,26.000 L35.706,34.293 C36.096,34.684 36.096,35.316 35.706,35.707 Z"/%3E%3C/svg%3E');
+    }
+    &.btn-icon-next i {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='54'%3E%3Cpath fill-rule='evenodd' fill='%23FFF' d='M27.545 25.923L2.56.45c-.589-.6-1.532-.6-2.12 0a1.542 1.542 0 0 0 0 2.161l23.919 24.387L.44 51.386a1.542 1.542 0 0 0 0 2.161c.289.294.676.453 1.054.453s.766-.148 1.055-.453l24.984-25.474a1.54 1.54 0 0 0 .012-2.15z'/%3E%3C/svg%3E");
+    }
+    &.btn:hover:not(:disabled) {
+        box-shadow: 0 0 0.5vh 0.05vh $ColorLight;
+        border: 1px solid rgb(204, 204, 204, 70%)!important;
+    }
+}
+
+.form-control {
+    float: left;
+    display: block;
+    position: relative;
+    width: 40vw;
+    padding: $FontSizeLabelInput*0.3 0;
+    input {
+        float: left;
+        display: block;
+        position: relative;
+        width: 25vw;
+        padding: 1rem;
+        line-height: $FontSizeLabelInput*0.3;
+        font-size: $FontSizeLabelInput;
+        @include FontFamNormal;
+    }
+    select {
+        float: left;
+        display: block;
+        position: relative;
+        width: 30vw;
+        padding: 1rem;
+        height: 4rem;
+        line-height: $FontSizeLabelInput*0.3;
+        font-size: $FontSizeLabelInput;
+    }
+    label {
+        float: left;
+        display: block;
+        position: relative;
+        width: 10vw;
+        line-height: 4vw;
+        font-size: 2vw;
+        padding: 1vw 2vw 0 0;
+    }
+}
+
+.footerAction {
+    position: fixed;
+    bottom: 2vw;
+    left: 2vw;
+    width: 96vw;
+    height: 7vw;
+    z-index: 9;
+}
+
+.footerAction .btn {
+    width: 16vw;
+    height: 7vw;
+    float: left;
+    padding: 1vw 0;
+    text-align: center;
+}
+
+.footerAction .right .btn {
+    float: right;
+}
+
+.footerAction i {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 16vw;
+    height: 2.5vw;
+    display: block;
+    margin-bottom: 1vh;
+}
+
+.footerAction .btn+.btn {
+    margin-left: 3vw;
+}
+
+.owl-img-frame {
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    width: 100%;
+    display: inline-block;
+    background-position: center center;
+}

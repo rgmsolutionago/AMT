@@ -1,0 +1,81 @@
+<app-header>
+  <app-nav-bar activePage="pago" [onlyCandy]="onlyCandy"></app-nav-bar>
+</app-header>
+
+<app-body>
+  <div id="Pagos">
+    <h1 class="PageTitle animated fadeIn">Seleccione el método de pago</h1>
+    <div class="clearfix"></div>
+
+    <div class="row PagosContent animated fadeIn">
+      <div class="col left">
+        <ul class="PaymentMethods">
+          <li *ngFor="let paymentMethod of availablePaymentMethods">
+            <div class="col PaymentMethod">
+              <label for="{{ paymentMethod?.paymentMethodCode }}">
+                <img alt="{{ paymentMethod?.name }}" src="../../../assets/img/{{ paymentMethod?.logo }}" />
+                {{ paymentMethod?.name }}
+              </label>
+              <input name="options" id="{{ paymentMethod?.paymentMethodCode }}" ng-control="options" type="radio" value="{{ paymentMethod?.paymentMethodCode }}"
+                (click)="selectedPaymentMethod=paymentMethod?.paymentMethodCode;selectedCreditCardCSID=paymentMethod?.creditCardCSID;">
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="col right">
+        <div class="OrderList">
+          <div class="OrderListHeader">
+            <h4>Su orden</h4>
+            <div *ngIf="!onlyCandy">
+              <h2>{{ order?.selectedFeature?.OriginalTitle }}</h2>
+              <h3>{{ order?.show?.parsedDate | titlecase }} - {{order?.show?.StartTime}} </h3>
+              <h3>{{ order?.show?.ScreenName}}</h3>
+            </div>
+          </div>
+          <ul class="TicketItems">
+            <li *ngFor="let category of order?.categories">
+              <div class="col text-left">
+                <span>{{ category.quantity }}</span> <span> {{ category.Name }}</span>
+              </div>
+              <div class="col text-right">
+                <span><b>{{ 'theatre_currency' | translate:'es' | async }}</b> {{ +category.Price * +category.quantity }}</span>
+              </div>
+            </li>
+            <li *ngFor="let product of order?.products">
+              <div class="col text-left">
+                <span>{{ product.quantity }}</span> <span> {{ product.NomProducto }}</span>
+              </div>
+              <div class="col text-right">
+                <span><b>{{ 'theatre_currency' | translate:'es' | async }}</b> {{ +product.ImpPreciosXProducto * product.quantity }}</span>
+              </div>
+            </li>
+          </ul>
+          <ul class="TicketTotals">
+            <li>
+              <div class="col text-left"> <span>Total</span> </div>
+              <div class="col text-right">
+                <span><b>{{ 'theatre_currency' | translate:'es' | async }}</b> {{ order?.total }}</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footerAction animated slideInUp">
+      <div class="row">
+        <div class="col left">
+          <a class="btn btn-default btn-icon-back"  (click)="back()"><i></i>Atrás</a>
+          <a class="btn btn-default btn-icon-cancel" routerLink="/clean-cache"><i></i>Cancelar</a>
+        </div>
+        <div class="col right">
+          <a class="btn btn-primary btn-icon-next" (click)="next()"><i></i>Siguiente</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <app-popup #errorPopup>
+    {{errorMessage}}
+  </app-popup>
+</app-body>

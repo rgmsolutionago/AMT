@@ -1,0 +1,99 @@
+<app-header> <app-nav-bar activePage="productos" [onlyCandy]="onlyCandy"></app-nav-bar> </app-header>
+
+<app-body>
+  <div id="CandyBar">
+    <div class="head-screen">
+      <h1 class="PageTitle animated fadeIn">{{ 'candy_page_title' | translate:'es' | async }}</h1>
+      <app-keylayout [keyLayouts]="keyLayouts" (loadProducts)="loadProducts($event)"></app-keylayout>
+    </div>
+    <div class="row CandyBarContent animated fadeIn">
+      <div class="col left">
+        <ul class="Products">
+          <h1 *ngIf="products == undefined || products == null || products.length == 0">No hay productos disponibles
+          </h1>
+          <li (click)="select(product)" *ngFor="let product of products" [class.active]="isSelected(product)">
+              <div class="Image">
+                <img [src]="product.image" />
+                <button *ngIf="product.DescripcionExtra" class="more-info" (click)="moreInfo(product)">
+                  <span>+ info</span>
+                </button>
+              </div>
+              <div class="Info">
+                <div class="Title">
+                  <span>{{ product.NomProducto }}</span>
+                </div>
+                <div class="PriceAndQuantity">
+                  <div class="Price">
+                    <span>{{ 'theatre_currency' | translate:'es' | async }} {{ +product.ImpPreciosXProducto }}</span>
+                  </div>
+                  <div class="Quantity">
+                    <span (click)="less(product)" class="Less"></span>
+                    <span class="Number">{{ product.quantity }}</span>
+                    <span (click)="more(product)" class="More"></span>
+                  </div>
+                </div>
+              </div>
+          
+          </li>
+        </ul>
+      </div>
+      <div class="col right">
+        <div class="OrderList">
+          <div class="OrderListHeader">
+            <h4>Su orden</h4>
+            <div *ngIf="!onlyCandy">
+              <h2>{{ order?.selectedFeature?.OriginalTitle }}</h2>
+              <h3>{{ order?.show?.parsedDate | titlecase }} - {{order?.show?.StartTime}} </h3>
+              <h3>{{ order?.show?.ScreenName}}</h3>
+            </div>
+
+          </div>
+          <ul class="TicketItems">
+            <li *ngFor="let category of order?.categories">
+              <div class="col text-left">
+                <span>{{ category.quantity }}</span> <span> {{ category.Name }}</span>
+              </div>
+              <div class="col text-right">
+                <span><b>{{ 'theatre_currency' | translate:'es' | async }}</b> {{ +category.Price * +category.quantity
+                  }}</span>
+              </div>
+            </li>
+            <li *ngFor="let product of order?.products">
+              <div class="col text-left">
+                <span>{{ product.quantity }}</span> <span> {{ product.NomProducto }}</span>
+              </div>
+              <div class="col text-right">
+                <span><b>{{ 'theatre_currency' | translate:'es' | async }}</b> {{ +product.ImpPreciosXProducto *
+                  product.quantity }}</span>
+              </div>
+            </li>
+          </ul>
+          <ul class="TicketTotals">
+            <li>
+              <div class="col text-left"> <span>Total</span> </div>
+              <div class="col text-right">
+                <span><b>{{ 'theatre_currency' | translate:'es' | async }}</b> {{ order?.total }}</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footerAction animated slideInUp">
+      <div class="row">
+        <div class="col left">
+
+          <button class="btn btn-default btn-icon-back" (click)="back()"><i></i>Atrás</button>
+          <a class="btn btn-default btn-icon-cancel" routerLink="/clean-cache"><i></i>Cancelar</a>
+        </div>
+        <div class="col right">
+          <button class="btn btn-primary btn-icon-next" [disabled]="onlyCandy && order?.products.length == 0" disabled
+            (click)="next()"><i></i>Siguiente</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</app-body>
+
+<product-details #productDetails></product-details>

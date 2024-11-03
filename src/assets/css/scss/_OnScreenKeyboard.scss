@@ -1,0 +1,72 @@
+@import "variables";
+
+#VirtualKeyboard {
+
+  display: inline-flex;
+  margin-top: 5vh;
+  margin-left: 4vw;
+
+  .container {
+    border: 4px solid $Color1;
+    border-radius: 10px;
+    padding: 1vw;
+  }
+
+  .line1-container {
+    padding: 0.4vh 2vw;
+
+    div {
+      margin-left: 1vw;
+      margin-right: 2vw;
+    }
+  }
+
+  .line2-container {
+    padding: 0.4vh 2vw;
+
+    div {
+      margin-left: 3vw;
+    }
+  }
+
+  .line3-container {
+    padding: 0.4vh 2vw;
+
+    div {
+      margin-left: 5vw;
+    }
+  }
+
+  .line4-container {
+    padding: 0.4vh 2vw;
+
+    div {
+      margin-left: 7vw;
+    }
+  }
+
+  .btn-keyboard {
+    margin-left: 1vw;
+    height: 5vh;
+    font-size: 1.2vw;
+    padding: 0vw 2.5vw 0vw 2.5vw;
+  }
+
+  .space-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.3vh 2vw;
+
+    .space {
+      padding: 0vw 20vw 0vw 20vw;
+    }
+  }
+
+
+  .btn {
+    &.btn:hover {
+      border: none !important;
+    }
+  }
+}

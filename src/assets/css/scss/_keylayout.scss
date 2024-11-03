@@ -1,0 +1,17 @@
+.keylayout-container {
+    border-radius: 8px;
+    width: unset;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-top: 12px;
+}
+
+
+.keylayout-container.active {
+    // border: 2px solid #ebc835;
+    box-shadow: 0 0 0.5vh 0.05vh #EEF1F3;
+}

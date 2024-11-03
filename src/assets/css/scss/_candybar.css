@@ -1,0 +1,213 @@
+#CandyBar .CandyBarContent {
+    display: flex;
+}
+
+#CandyBar .CandyBarContent>.col {
+    background-color: #EEF1F3;
+    padding: 1vw 1vw 0vw 1vw;
+    float: left;
+    position: fixed;
+    margin: 1vw 0vw;
+    height: 61vh;
+    width: 62vw;
+}
+
+#CandyBar .CandyBarContent>.col.left {
+    left: 2vw;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+#CandyBar .CandyBarContent>.col.right {
+    color: #020202;
+    left: 66vw;
+    width: 32vw;
+    height: 60vh;
+}
+
+#CandyBar .CandyBarContent>.col.right:after {
+    content: "";
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='738' height='83'%3E%3Cpath fill-rule='evenodd' fill='%23EEF1F3' d='M717 82h-5l-17-11c-2-1-4-2-5-1l-14 12h-4l-18-11c-1-1-3-2-4-1l-14 12h-4l-18-11c-1-1-2-2-4-1l-14 12h-4l-18-11c-1-1-3-2-5-1l-13 12h-5l-17-11c-1-1-3-2-5-1l-13 12h-5l-17-11-2-2-14 13h-5l-17-11c-2-1-4-2-5-1l-14 12h-4l-18-11c-1-1-3-2-4-1l-14 12h-4l-18-11c-1-1-2-2-4-1l-14 12h-4l-18-11c-1-1-3-2-5-1l-13 12h-5l-17-11c-1-1-3-2-5-1l-13 12h-5l-17-11-2-2-14 13h-5l-17-11c-2-1-4-2-5-1l-14 12h-4l-18-11c-1-1-3-2-4-1l-14 12h-4l-18-11c-1-1-2-2-4-1l-14 12h-4L96 71c-1-1-3-2-5-1L78 82h-5L56 71c-1-1-3-2-5-1L38 82h-5L16 71c-1-1-3-2-5-1L0 80V0h738v63l-21 19z'/%3E%3C/svg%3E");
+    display: block;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    height: 18px;
+    bottom: -20px;
+    position: fixed;
+    top: 79vh;
+    left: 66vw;
+    width: 32vw;
+}
+
+#CandyBar .CandyBarContent>.col ul.TicketFunction {
+    margin: 0 -2vw 0 0;
+    padding: 0;
+}
+
+#CandyBar .CandyBarContent>.col ul.TicketFunction li {
+    margin: 0 1vw 2vh 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background: #EEF1F3;
+    float: left;
+    overflow: hidden;
+    align-items: center;
+    width: 14vw;
+    height: 50vh;
+}
+
+#CandyBar .CandyBarContent>.col ul.TicketFunction li .Promo {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #EEF1F3;
+    min-height: 12.2vh;
+    height: auto;
+    vertical-align: middle;
+    font-size: 3vh;
+    align-items: center;
+    padding: 0;
+    overflow: hidden;
+    width: 14vw;
+    position: relative;
+}
+
+#CandyBar .CandyBarContent>.col ul.TicketFunction li .Promo img {
+    width: 14vw;
+    height: 38vh;
+    display: block;
+    position: relative;
+    background-image: url("/assets/img/combo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#CandyBar .CandyBarContent>.col ul.TicketFunction li .Promo .Title {
+    display: block;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    color: #1280c0;
+    background-color: #EEF1F3;
+    text-align: center;
+    font-size: 1.5vw;
+    padding: 1vw;
+    line-height: 1.1;
+    min-height: 6vw;
+}
+
+#CandyBar .CandyBarContent>.col ul.TicketFunction li .Promo .Price {
+    display: block;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    width: 100%;
+}
+
+#CandyBar .CandyBarContent>.col ul.TicketFunction li .PromoQuantity {
+    display: inline-block;
+    height: 12.2vh;
+    vertical-align: middle;
+    font-size: 2vh;
+    padding: 0;
+    text-align: center;
+    background-color: #dfdfdf;
+    width: 14vw;
+}
+
+#CandyBar .CandyBarContent>.col ul.TicketFunction li .PromoQuantity .Title {
+    display: block;
+    padding: 1vh 0;
+    line-height: 1;
+}
+
+#CandyBar .CandyBarContent>.col ul.TicketFunction li .PromoQuantity h2.Price {
+    font-size: 3.5vh;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: #1280c0;
+}
+
+#CandyBar .CandyBarContent>.col ul.TicketFunction li .PromoQuantity .Quantity {
+    display: inline-table;
+    line-height: 1;
+    text-align: center;
+}
+
+#CandyBar .CandyBarContent>.col ul.TicketFunction li .PromoQuantity .Quantity .Less {
+    display: inline-block;
+    cursor: pointer;
+    width: 3vw;
+    height: 7vh;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='34' height='34'%3E%3Cpath fill-rule='evenodd' fill='%231280c0' d='M17 34a17 17 0 0 1 0-34 17 17 0 0 1 0 34zm0-32a15 15 0 0 0 0 30 15 15 0 0 0 0-30zm8 16H10l-1-1 1-1h15l1 1-1 1z'/%3E%3C/svg%3E");
+}
+
+#CandyBar .CandyBarContent>.col ul.TicketFunction li .PromoQuantity .Quantity .More {
+    display: inline-block;
+    cursor: pointer;
+    width: 3vw;
+    height: 7vh;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='34' height='34'%3E%3Cpath fill-rule='evenodd' fill='%231280c0' d='M17 34a17 17 0 0 1 0-34 17 17 0 0 1 0 34zm0-32a15 15 0 0 0 0 30 15 15 0 0 0 0-30zm8 16h-7v7l-1 1-1-1v-7h-6l-2-1 2-1h6V9l1-1 1 1v7h7l1 1-1 1z'/%3E%3C/svg%3E");
+}
+
+#CandyBar .CandyBarContent>.col ul.TicketFunction li .PromoQuantity .Quantity .QuantityNum {
+    display: inline-block;
+    font-size: 5vh;
+    width: 6vw;
+    height: 7vh;
+    line-height: 7vh;
+    vertical-align: top;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: #1280c0;
+}
+
+#CandyBar .CandyBarContent>.col ul.TicketFunction li.active {
+    background-color: #ebc835;
+    border: 5px solid #ebc835;
+}
+
+#CandyBar .CandyBarContent>.col ul.TicketFunction li.active .Less {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='34' height='34'%3E%3Cpath fill-rule='evenodd' fill='%23ffffff' d='M17 34a17 17 0 0 1 0-34 17 17 0 0 1 0 34zm0-32a15 15 0 0 0 0 30 15 15 0 0 0 0-30zm8 16H10l-1-1 1-1h15l1 1-1 1z'/%3E%3C/svg%3E");
+}
+
+#CandyBar .CandyBarContent>.col ul.TicketFunction li.active .More {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='34' height='34'%3E%3Cpath fill-rule='evenodd' fill='%23ffffff' d='M17 34a17 17 0 0 1 0-34 17 17 0 0 1 0 34zm0-32a15 15 0 0 0 0 30 15 15 0 0 0 0-30zm8 16h-7v7l-1 1-1-1v-7h-6l-2-1 2-1h6V9l1-1 1 1v7h7l1 1-1 1z'/%3E%3C/svg%3E");
+}
+
+#CandyBar .CandyBarContent>.col ul.TicketFunction li.active .PromoQuantity {
+    background-color: #ebc835;
+}
+
+#CandyBar .CandyBarContent .TicketTotals {
+    position: relative;
+    padding: 0;
+    line-height: 4vh;
+    vertical-align: top;
+}
+
+#CandyBar .CandyBarContent>.col.left {
+    scrollbar-color: #1280c0 #fefefe;
+}
+
+#CandyBar .CandyBarContent>.col.left::-webkit-scrollbar {
+    width: 5vw;
+    height: 5vw;
+}
+
+#CandyBar .CandyBarContent>.col.left::-webkit-scrollbar-track-piece {
+    background-color: #1280c0;
+}
+
+#CandyBar .CandyBarContent>.col.left::-webkit-scrollbar-thumb:vertical {
+    height: 5vw;
+    background-color: #1280c0;
+}

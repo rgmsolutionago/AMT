@@ -1,0 +1,61 @@
+@import "variables";
+
+div#ticket-withdraw {
+  display: block;
+  width: 80vw;
+  margin: 2vw auto;
+}
+
+.form-control {
+  label {
+    color: $ColorLight;
+  }
+
+  input {
+    padding: $InputPadding;
+    border-radius: 8px;
+  }
+}
+
+.KeyNumbers {
+  width: 38vw;
+  display: block;
+  float: right;
+  position: relative;
+  text-align: center;
+  margin: 0 auto;
+
+  div {
+    border-radius: 6vh;
+    border: 3px solid white;
+    display: block;
+    float: left;
+    width: 12vh;
+    height: 12vh;
+    color: $ColorLight;
+    text-align: center;
+    line-height: 12vh;
+    margin: 0 2vh 2vh 0;
+    font-size: 6vh;
+    @include FontFamBold;
+  }
+
+  .Key4,
+  .Key7,
+  .Key1,
+  .Key0 {
+    clear: left;
+  }
+
+  div.KeyDel {
+    width: 26vh;
+    border-radius: 6vh;
+    font-size: 4vh;
+  }
+
+  div:hover {
+    box-shadow: 0 0 2vh 0.2vh #fff;
+    background-color: rgba(29, 28, 35, 0.6);
+  }
+}
+/*# sourceMappingURL=_retira.css.map */

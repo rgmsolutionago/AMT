@@ -1,0 +1,93 @@
+{
+  "env": {
+    "name": "DEV"
+  },
+  "remote": {
+    "trans": "assets/services/trans.wsdl",
+    "info": "assets/services/info.wsdl"
+  },
+  "production": true,
+  "sellOption":3,
+  "atmFilter": "ATM",
+  "productsFilter": "CATM",
+  "theatreID": 187,
+  "theatreName": "Cines Multiplex",
+  "theatreGroupID": 187,
+  "workstationId": 2,
+  "timeToIdleWarningSeconds": 6000,
+  "timeFromIdleWarningToKickSeconds": 600,
+  "showIntroScreen": true,
+  "withdraw": {
+    "maxTries": 4,
+    "ticketCodeLength": 4
+  },
+  "defaultMoviePoster": "/assets/img/movie.jpg",
+  "defaultProductImage": "/assets/img/combo.jpg",
+  "isQRWithdrawalEnabled": true,
+  "printer": {
+    "serviceBaseUrl": "http://localhost:85/cswsprint",
+    "boxOffice": {
+      "name": "Microsoft XPS Document Writer",
+      "port": ""
+    },
+    "concession": {
+      "name": "Microsoft XPS Document Writer",
+      "port": ""
+    },
+    "receiptConcession": {
+      "name": "Microsoft XPS Document Writer",
+      "port": ""
+    }
+  },
+  "availablePaymentMethods": [
+    {
+      "name": "Visa Crédito",
+      "paymentMethodCode": 1,
+      "creditCardCSID": 1,
+      "logo": "PaymentMethodLogoVisa.png"
+    },
+    {
+      "name": "Mastercard Débito",
+      "paymentMethodCode": 2,
+      "creditCardCSID": 2,
+      "logo": "PaymentMethodLogoMasterCard.png"
+    },
+    {
+      "name": "Efectivo",
+      "paymentMethodCode": 3,
+      "creditCardCSID": 3,
+      "logo": "PaymentMethodLogoUndefined.png"
+    },
+    {
+      "name": "American Express",
+      "paymentMethodCode": 4,
+      "creditCardCSID": 4,
+      "logo": "PaymentMethodLogoUndefined.png"
+    },
+    {
+      "name": "Visa Débito",
+      "paymentMethodCode": 5,
+      "creditCardCSID": 5,
+      "logo": "PaymentMethodLogoVisa.png"
+    },
+    {
+      "name": "Mastercard Crédito",
+      "paymentMethodCode": 6,
+      "creditCardCSID": 6,
+      "logo": "PaymentMethodLogoMasterCard.png"
+    }
+  ], 
+  "finalCustomer": {
+    "name": "Ciente",
+    "lastName": " Final",
+    "ID": 1,
+    "telephone": "1",
+    "email": "test@cinestar.com"
+  },
+  "reloadCacheAfterMinutes": 3,
+  "showPaymentMethodContactless": false,
+  "showPaymentMethodMagnetic": false,
+  "showPaymentMethodChip": true,
+  "paymentTimeoutSeconds": 600,
+  "showClientInvoiceScreen": true
+}

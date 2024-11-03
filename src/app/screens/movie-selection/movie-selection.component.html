@@ -1,0 +1,34 @@
+<app-header>
+  <app-nav-bar activePage="cartelera"></app-nav-bar>
+</app-header>
+<app-body *ngIf="this.movies.length > 0">
+  <ng-container *ngIf="development">
+    <!-- <button (click)="addMovieTest()" class="btn" style="position:fixed; z-index: 5000; top: 0;left:30%">+</button>
+    <button (click)="removeMovieTest()" class="btn" style="position:fixed; z-index: 5000; top:0; left: 38%">-</button> -->
+  </ng-container>
+  <div id="Cartelera">
+    <div class="Home">
+      <a (click)="navigate('/')" title="Inicio"> <i class="HomeIcon animated slideInLeft"></i> <span>Inicio</span></a>
+      <h1 class="PageTitle animated slideInLeft text-center">Seleccione la película</h1>
+    </div>
+    <div *ngIf="movies" class="row align-items-center {{moviesBigClass}} movies-{{movieCountForStyle}}">
+      <div class="carousel-Cartelera">
+        <ngx-slick class="carousel" #slickModal="slick-modal" [config]="slideConfig">
+          <a (click)="select(movie)" ngxSlickItem *ngFor="let movie of movies" class="item slide">
+            <figure [ngStyle]="{ 'background-image': 'url(' + (movie.feature[0]?.poster | safe : 'resourceUrl') + ')' }">
+              <div class="blur"
+                [ngStyle]="{ 'background-image': 'url(' + (movie.feature[0]?.poster | safe : 'resourceUrl') + ')' }"></div>
+              <img [src]="(movie.feature[0]?.poster | safe : 'resourceUrl')" />
+            </figure>
+            <div class="data">
+              <div class="data1"> {{ movie.originalTitle }} </div>
+              <div class="data2"> {{ movie.feature[0]?.Rating }} </div>
+            </div>
+          </a>
+        </ngx-slick>
+      </div>
+    </div>
+  </div>
+</app-body>
+
+<app-custom-error #errorPopup></app-custom-error>
